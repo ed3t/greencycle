@@ -1,0 +1,62 @@
+{OVERALL_HEADER}
+<style>
+    .grid-sizer, .grid-item {
+        width: 10%;
+    }
+
+    .sitemap-region {
+        height: auto;
+        float: left;
+    }
+
+    .sitemap-region ul li .count {
+        opacity: 0.8;
+        display: inline-block;
+        font-size: 12px;
+        float: right;
+        top: 4px;
+        position: relative;
+        padding-left: 15px;
+    }
+</style>
+<!-- main -->
+<section id="main" class="clearfix page">
+    <div class="container">
+        <div class="breadcrumb-section"><!-- breadcrumb -->
+            <ol class="breadcrumb">
+                <li><a href="{LINK_INDEX}"><i class="fa fa-home"></i> {LANG_HOME}</a></li>
+                <li>{LANG_SITE-MAP}</li>
+                <div class="pull-right back-result"><a href="{LINK_LISTING}"><i class="fa fa-angle-double-left"></i>
+                    {LANG_BACK-RESULT}</a></div>
+                <h2 class="title">{LANG_SITE-MAP}</h2>
+            </ol>
+            <!-- breadcrumb --></div>
+        <div class="section">
+            <h2 class="text-center sitemap-h2">{LANG_LIST-CAT-SUBCAT}</h2>
+            <hr>
+            <div class="grid">
+                <div class="grid-sizer"></div>
+                {LOOP: CAT}
+                <div class="sitemap-region">
+                    <h4><a href="listing.php?cat={CAT.main_id}"><i class="{CAT.icon}"></i> {CAT.main_title}</a></h4>
+                    <ul>
+                        {CAT.sub_title}
+                    </ul>
+                </div>
+                {/LOOP: CAT}
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!-- container --></section>
+<!-- main -->
+<script src="https://unpkg.com/masonry-layout@4.2.0/dist/masonry.pkgd.js"></script>
+<script>
+    // external js: masonry.pkgd.js
+    $('.grid').masonry({
+        itemSelector: '.sitemap-region',
+        columnWidth: '.grid-sizer',
+        percentPosition: true
+    });
+
+</script>{OVERALL_FOOTER}

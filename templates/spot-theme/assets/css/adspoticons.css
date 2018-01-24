@@ -1,0 +1,159 @@
+@font-face {
+    font-family: 'adspoticons';
+    src:    url('../fonts/adspoticons.eot?z7z1uj');
+    src:    url('../fonts/adspoticons.eot?z7z1uj#iefix') format('embedded-opentype'),
+    url('../fonts/adspoticons.ttf?z7z1uj') format('truetype'),
+    url('../fonts/adspoticons.woff?z7z1uj') format('woff'),
+    url('../fonts/adspoticons.svg?z7z1uj#adspoticons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="adicon-"], [class*=" adicon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'adspoticons' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: inherit;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.015);
+}
+
+.adicon-activate:before {
+    content: "\e900";
+}
+.adicon-alarm:before {
+    content: "\e901";
+}
+.adicon-arrow-left:before {
+    content: "\e902";
+}
+.adicon-attachment:before {
+    content: "\e903";
+}
+.adicon-bell:before {
+    content: "\e904";
+}
+.adicon-briefcase:before {
+    content: "\e905";
+}
+.adicon-buildings:before {
+    content: "\e906";
+}
+.adicon-cancel:before {
+    content: "\e907";
+}
+.adicon-car:before {
+    content: "\e908";
+}
+.adicon-cart:before {
+    content: "\e909";
+}
+.adicon-check-empty:before {
+    content: "\e90a";
+}
+.adicon-check-fill:before {
+    content: "\e90b";
+}
+.adicon-cross:before {
+    content: "\e90c";
+}
+.adicon-document:before {
+    content: "\e90d";
+}
+.adicon-dog:before {
+    content: "\e90e";
+}
+.adicon-dollar:before {
+    content: "\e90f";
+}
+.adicon-dot-menu:before {
+    content: "\e910";
+}
+.adicon-edit:before {
+    content: "\e911";
+}
+.adicon-envelope:before {
+    content: "\e912";
+}
+.adicon-expand:before {
+    content: "\e913";
+}
+.adicon-eye:before {
+    content: "\e914";
+}
+.adicon-globe:before {
+    content: "\e915";
+}
+.adicon-grid:before {
+    content: "\e916";
+}
+.adicon-hamburger:before {
+    content: "\e917";
+}
+.adicon-happy:before {
+    content: "\e918";
+}
+.adicon-hat:before {
+    content: "\e919";
+}
+.adicon-heal:before {
+    content: "\e91a";
+}
+.adicon-heart:before {
+    content: "\e91b";
+}
+.adicon-hearts:before {
+    content: "\e91c";
+}
+.adicon-home:before {
+    content: "\e91d";
+}
+.adicon-left-arrow:before {
+    content: "\e91e";
+}
+.adicon-phone:before {
+    content: "\e91f";
+}
+.adicon-play:before {
+    content: "\e920";
+}
+.adicon-recyclebin:before {
+    content: "\e921";
+}
+.adicon-recyclebin-empty:before {
+    content: "\e922";
+}
+.adicon-search:before {
+    content: "\e923";
+}
+.adicon-settings:before {
+    content: "\e924";
+}
+.adicon-smile:before {
+    content: "\e925";
+}
+.adicon-sofa:before {
+    content: "\e926";
+}
+.adicon-star:before {
+    content: "\e927";
+}
+.adicon-star-circle:before {
+    content: "\e928";
+}
+.adicon-tablet:before {
+    content: "\e929";
+}
+.adicon-tick:before {
+    content: "\e92a";
+}
+.adicon-tv:before {
+    content: "\e92b";
+}
+

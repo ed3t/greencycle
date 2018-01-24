@@ -1,0 +1,43 @@
+{
+    "name": "push-edx/flarum-ext-chat",
+    "description": "Realtime chat.",
+    "keywords": ["chat", "flarum", "pushedx", "push-edx"],
+    "type": "flarum-extension",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Juan"
+        },
+        {
+            "name": "Guillem Pascual",
+            "email": "blipi.tube@gmail.com",
+            "homepage": "http://pushedx.net"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/Push-EDX/flarum-ext-chat/issues",
+        "source": "https://github.com/Push-EDX/flarum-ext-chat"
+    },
+    "require": {
+        "flarum/core": "^0.1.0-beta.6",
+        "flarum/flarum-ext-markdown": "^0.1.0-beta.3"
+    },
+    "extra": {
+        "flarum-extension": {
+            "title": "Realtime Chat",
+            "icon": {
+                "image": "icon.png",
+                "backgroundSize": "75px 75px",
+                "backgroundPosition": "center",
+                "backgroundRepeat": "no-repeat",
+                "backgroundColor": "#244052",
+                "color": "#fff"
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "PushEDX\\Chat\\": "src/"
+        }
+    }
+}

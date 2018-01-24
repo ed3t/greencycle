@@ -1,0 +1,1002 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    <title>AdSpot - The Classified Web App</title>
+    <!--========================================
+    Meta
+    ===========================================-->
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- Web Application Manifest -->
+
+    <!-- Add to home screen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="xDocs">
+    <link rel="icon" sizes="192x192" href="assets/img/basic/chrome-touch-icon-192x192.png">
+
+    <!-- Add to home screen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Web Starter Kit">
+    <link rel="apple-touch-icon" href="assets/img/basic/apple-touch-icon.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="assets/img/basic/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#55acee">
+    <!-- Color the status bar on mobile devices -->
+    <meta name="theme-color" content="#55acee">
+
+    <!--========================================
+    CSS
+    ===========================================-->
+    <!--3rd party plugins-->
+    <link href="assets/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/lib/slick-carousel/slick/slick.css" rel="stylesheet" type="text/css">
+    <!--custom icons for classified website-->
+    <link href="assets/css/adspoticons.css" rel="stylesheet" type="text/css">
+    <!--main styles for template-->
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+    <!--put your custom css on the file below-->
+    <link href="assets/css/custom.css" rel="stylesheet" type="text/css">
+    <!--put fonts here-->
+    <link href="assets/fonts/adspoticons.ttf" rel="stylesheet" type="text/css">
+    <link href="assets/fonts/adspoticons.eot" rel="stylesheet" type="text/css">
+    <link href="assets/fonts/adspoticons.woff" rel="stylesheet" type="text/css">
+    <link href="assets/fonts/adspoticons.svg" rel="stylesheet" type="text/css">
+    <link href="assets/lib/font-awesome/fonts/fontawesome-webfont.ttf" rel="stylesheet" type="text/css">
+    <link href="assets/lib/font-awesome/fonts/fontawesome-webfont.eot" rel="stylesheet" type="text/css">
+    <link href="assets/lib/font-awesome/fonts/fontawesome-webfont.svg" rel="stylesheet" type="text/css">
+    <link href="assets/lib/font-awesome/fonts/fontawesome-webfont.woff" rel="stylesheet" type="text/css">
+    <link href="assets/lib/font-awesome/fonts/fontawesome-webfont.woff2" rel="stylesheet" type="text/css">
+
+
+</head>
+<body>
+    <div class="web-app">
+        <div class="doc-header style3">
+            <div class="container">
+                <div class="inner">
+                    <div class="app-logo">
+                        <button class="mobile-control mob-menu-trigger"><i class="adicon-hamburger"></i></button>
+                        <a href="home-default.html"><img src="assets/img/basic/logo.png" alt="adspot"></a>
+                    </div>
+                    <div class="clearfix">
+                        <ul>
+                            <li><a class="modal-trigger" href="#signInModal">Login</a></li>
+                            <li><a class="modal-trigger" href="#signUpModal">Register</a></li>
+                            <li class="dropdown-wrap"><a href="#"><i class="adicon-globe"></i></a>
+                                <div class="basic-dropdown">
+                                    <ul class="country-list">
+                                        <li><a href="#"><img src="assets/img/flags/ukflag.png" alt="dummy">English (UK)</a></li>
+                                        <li><a href="#"><img src="assets/img/flags/france.png" alt="dummy">France</a></li>
+                                        <li><a href="#"><img src="assets/img/flags/germany.png" alt="dummy">German</a></li>
+                                        <li><a href="#"><img src="assets/img/flags/russian.png" alt="dummy">Russian</a></li>
+                                        <li><a href="#"><img src="assets/img/flags/china.png" alt="dummy">Chinese</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="dropdown-wrap"><a href="#"><i class="adicon-cart"></i></a>
+                                <div class="basic-dropdown wide">
+                                    <div class="short-cart">
+                                        <ul>
+                                            <li>
+                                                <figure><img src="assets/img/items/ad1.png" alt="dummy"></figure>
+                                                <a href="#" class="item-title">Iphone 6 Plus 16GB</a>
+                                                <span>$229.00</span>
+                                                <a href="#" class="remove-item"><i class="fa fa-close"></i></a>
+                                            </li>
+                                            <li>
+                                                <figure><img src="assets/img/items/ad2.jpg" alt="dummy"></figure>
+                                                <a href="#" class="item-title">Iphone 6 Plus 16GB</a>
+                                                <span>$229.00</span>
+                                                <a href="#" class="remove-item"><i class="fa fa-close"></i></a>
+                                            </li>
+                                            <li>
+                                                <figure><img src="assets/img/items/ad3.jpg" alt="dummy"></figure>
+                                                <a href="#" class="item-title">Iphone 6 Plus 16GB</a>
+                                                <span>$229.00</span>
+                                                <a href="#" class="remove-item"><i class="fa fa-close"></i></a>
+                                            </li>
+                                        </ul>
+                                        <table>
+                                            <tr>
+                                                <td>Total Price</td>
+                                                <td><strong>885.00 USD</strong></td>
+                                            </tr>
+                                        </table>
+                                        <a href="cart.html" class="btn btn-transparent block-element">View Cart</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="dropdown-wrap"><a href="#" class="nav-trigger"><i class="adicon-hamburger"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sliding-nav">
+            <a class="close-sliding-nav" href="#">Close nav</a>
+            <nav class="slide-nav-list">
+                <ul>
+                    <li class="parent">
+                        <a href="javascript:return;">Demos</a>
+                        <ul>
+                            <li><a href="home2.html">Demo1 - Focus</a></li>
+                            <li><a href="home3.html">Demo2 - Expressive</a></li>
+                            <li><a href="home4.html">Demo3 - Minimal</a></li>
+                            <li><a href="home5.html">Demo4 - Fancy</a></li>
+                        </ul>
+                    </li>
+                    <li class="parent">
+                        <a href="#">Classified</a>
+                        <ul>
+                            <li><a href="home-default.html">Home</a></li>
+                            <li><a href="listing.html">Ads Archive</a></li>
+                            <li><a href="single.html">Ad Single</a></li>
+                            <li><a href="create.html">Create Ad</a></li>
+                            <li><a href="dashboard.html">Dashboard</a></li>
+                        </ul>
+                    </li>
+                    <li class="parent">
+                        <a  href="javascript:return;">Shop</a>
+                        <ul>
+                            <li><a href="shop-index.html">Shop Home</a></li>
+                            <li><a href="shop-listing.html">Archive</a></li>
+                            <li><a href="shop-single.html">Single</a></li>
+                            <li><a href="cart.html">Cart</a></li>
+                            <li><a href="checkout.html">Checkout</a></li>
+                        </ul>
+                    </li>
+                    <li class="parent">
+                        <a  href="javascript:return;">Pages</a>
+                        <ul>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="blog-single.html">Blog Single</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="terms.html">Terms</a></li>
+                        </ul>
+                    </li>
+                    <li class="parent">
+                        <a  href="javascript:return;">Shortcodes</a>
+                        <ul>
+                            <li><a href="elements-shortcodes.html">Elements</a></li>
+                            <li><a href="typography.html">Typography</a></li>
+                           <li><a href="elements-bootstrap.html">Bootstrap Components</a></li><li><a href="buttons.html">Buttons</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+        <div class="mobile-menu-wrap">
+            <a href="#" class="closeMobilMenu">close the mobile menu</a>
+            <nav class="mobile-menu">
+                <div class="search-widget">
+                    <input type="text" placeholder="search">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </div>
+                <ul class="menu-list">
+                    <li><a href="create.html">Create an Ad</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="listing.html">Ads Listing Page</a></li>
+                    <li><a href="how-adspot-works.html">How this works</a></li>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="contact.html">Contact us</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="blog-single.html">Blog Single</a></li>
+                    <li><a href="shop-index.html">Shop Page</a></li>
+                    <li><a href="shop-listing.html">Shop Archive</a></li>
+                    <li><a href="cart.html">Cart Page</a></li>
+                    <li><a href="checkout.html">Checkout Page</a></li>
+                    <li><a href="elements-shortcodes.html">Checkout Page</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="app-canvas">
+
+            <div class="main-banner-2 imgAsBg hero-banner">
+                <img src="assets/img/header-bg2.jpg" alt="dummy">
+                <div class="inner">
+                    <div class="container">
+                        <header>
+                            <h2>The Classified <br>Marketplace</h2>
+                            <div class="fancy-label">
+                                <span>79.508 live Ads on adspot</span>
+                            </div>
+                        </header>
+                    </div>
+                </div>
+                <div class="categories-slider">
+                    <div class="container">
+                        <div class="slick-carousel category-thumbs-2" data-slides-scroll="1" data-dots="false" data-nav="true" data-prev="fa fa-angle-left" data-next="fa fa-angle-right" data-slides="8" data-slides-lg="6" data-slides-md="4" data-slides-sm="2" data-loop="true" data-auto="true">
+                            <div class="cat-thumb-2 active"><a href="#" class="bg1"><i class="adicon-car"></i>
+                                <span>vehicles</span>
+                            </a></div>
+                            <div class="cat-thumb-2"><a href="#" class="bg2"><i class="adicon-tablet"></i>
+                                <span>Mobiles</span>
+                            </a></div>
+                            <div class="cat-thumb-2"><a href="#" class="bg3"><i class="adicon-tv"></i>
+                                <span>Electronics</span>
+                            </a></div>
+                            <div class="cat-thumb-2"><a href="#" class="bg4"><i class="adicon-sofa"></i>
+                                <span>Furniture</span>
+                            </a></div>
+                            <div class="cat-thumb-2"><a href="#" class="bg5"><i class="adicon-briefcase"></i>
+                                <span>Jobs</span>
+                            </a></div>
+                            <div class="cat-thumb-2"><a href="#" class="bg6"><i class="adicon-buildings"></i>
+                                <span>Real Estate</span>
+                            </a></div>
+                            <div class="cat-thumb-2"><a href="#" class="bg7"><i class="adicon-bell"></i>
+                                <span>Services</span>
+                            </a></div>
+                            <div class="cat-thumb-2"><a href="#" class="bg8"><i class="adicon-hat"></i>
+                                <span>Education</span>
+                            </a></div>
+                            <div class="cat-thumb-2"><a href="#" class="bg9"><i class="adicon-dog"></i>
+                                <span>Animals</span>
+                            </a></div>
+                            <div class="cat-thumb-2"><a href="#" class="bg10"><i class="adicon-heal"></i>
+                                <span>Fashion</span>
+                            </a></div>
+                            <div class="cat-thumb-2"><a href="#" class="bg11"><i class="adicon-smile"></i>
+                                <span>Baby products</span>
+                            </a></div>
+                            <div class="cat-thumb-2"><a href="#" class="bg12"><i class="adicon-hearts"></i>
+                                <span>Matrimony</span>
+                            </a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-search">
+                <div class="container">
+                    <form action="/">
+                        <div class="search-filter">
+                            <div class="radio-dropdown">
+                                <i class="fa fa-bars"></i>
+                                <button>Select city</button>
+                                <ul>
+                                    <li class="custom-radio">
+                                        <input type="radio" id="create0221" name="item-brand-name">
+                                        <label for="create0221">Bradford</label>
+                                    </li>
+                                    <li class="custom-radio">
+                                        <input type="radio" id="create0231" name="item-brand-name">
+                                        <label for="create0231">Cambridge</label>
+                                    </li>
+                                    <li class="custom-radio">
+                                        <input type="radio" id="create0241" name="item-brand-name">
+                                        <label for="create0241">Chester</label>
+                                    </li>
+                                    <li class="custom-radio">
+                                        <input type="radio" id="create0251" name="item-brand-name">
+                                        <label for="create0251">Durham</label>
+                                    </li>
+                                    <li class="custom-radio">
+                                        <input type="radio" id="create0261" name="item-brand-name">
+                                        <label for="create0261">Glasgow</label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="search-filter">
+                            <div class="radio-dropdown">
+                                <i class="fa fa-bars"></i>
+                                <button>All Categories</button>
+                                <ul>
+                                    <li class="custom-radio">
+                                        <input type="radio" id="search0221" name="item-cat-name">
+                                        <label for="search0221">Vehicles</label>
+                                    </li>
+                                    <li class="custom-radio">
+                                        <input type="radio" id="search0231" name="item-cat-name">
+                                        <label for="search0231">Mobiles</label>
+                                    </li>
+                                    <li class="custom-radio">
+                                        <input type="radio" id="search0241" name="item-cat-name">
+                                        <label for="search0241">Electronics</label>
+                                    </li>
+                                    <li class="custom-radio">
+                                        <input type="radio" id="search0251" name="item-cat-name">
+                                        <label for="search0251">Furniture</label>
+                                    </li>
+                                    <li class="custom-radio">
+                                        <input type="radio" id="search0261" name="item-cat-name">
+                                        <label for="search0261">Jobs</label>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="search-widget-wrap">
+                            <div class="search-widget style2">
+                                <input type="text" placeholder="search">
+                                <button class="btn" type="submit">Search Ads</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <section class="section style2">
+                <div class="container">
+                    <header class="heading big text-center">
+                        <h1>World’s <strong>Biggest</strong> Classified Marketplace</h1>
+                        <p class="text-uppercase">sell &amp; purchase anything</p>
+                    </header>
+                    <div class="location-boxes clearfix">
+                        <div class="location-box">
+                            <div class="imgAsBg">
+                                <img src="assets/img/loc1.jpg" alt="dummy">
+                                <a href="#">Show all ads</a>
+                                <div class="loc-info">
+                                    <h3>Berlin</h3>
+                                    <span>489 Ads</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="location-box">
+                            <div class="imgAsBg">
+                                <img src="assets/img/loc2.jpg" alt="dummy">
+                                <a href="#">Show all ads</a>
+                                <div class="loc-info">
+                                    <h3>Berlin</h3>
+                                    <span>489 Ads</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="location-box">
+                            <div class="imgAsBg">
+                                <img src="assets/img/loc3.jpg" alt="dummy">
+                                <a href="#">Show all ads</a>
+                                <div class="loc-info">
+                                    <h3>Berlin</h3>
+                                    <span>489 Ads</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="location-box">
+                            <div class="imgAsBg">
+                                <img src="assets/img/loc4.jpg" alt="dummy">
+                                <a href="#">Show all ads</a>
+                                <div class="loc-info">
+                                    <h3>Berlin</h3>
+                                    <span>489 Ads</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="location-box">
+                            <div class="imgAsBg">
+                                <img src="assets/img/loc5.jpg" alt="dummy">
+                                <a href="#">Show all ads</a>
+                                <div class="loc-info">
+                                    <h3>Berlin</h3>
+                                    <span>489 Ads</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="location-box">
+                            <div class="imgAsBg">
+                                <img src="assets/img/loc6.jpg" alt="dummy">
+                                <a href="#">Show all ads</a>
+                                <div class="loc-info">
+                                    <h3>Berlin</h3>
+                                    <span>489 Ads</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <div class="call-to-action-3 style2">
+                <div class="container">
+                    <div class="inner clearfix">
+                        <div class="counter">
+                            <span>2</span>
+                            <span>6</span>
+                            <span>3</span>
+                            <span>9</span>
+                            <span>5</span>
+                            <span>1</span>
+                        </div>
+                        <strong>World’s Biggest Classified Marketplace</strong>
+                        <a class="btn btn-green pull-right" href="#">Post and Ad</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-section imgAsBg hero-section">
+                <img src="assets/img/testibg.jpg" alt="dummy">
+                <div class="vertical-content">
+                    <div class="container">
+                        <div class="testimonial-slider">
+                            <div class="slick-carousel slick-testimonials dots-toLeft" data-slides-scroll="1" data-dots="true" data-nav="false" data-prev="fa fa-chevron-left" data-next="fa fa-chevron-right" data-slides="1" data-slides-lg="1" data-slides-md="1" data-slides-sm="1" data-loop="true" data-auto="true">
+                                <blockquote>
+                                    <p><span>Aenean sollicitudin lorem quis bibendum auctor nisi elit consequat ipsum nec sagittis sem nibh id elit lorem Ipsum proin gravida nibh vel velit auctor aliquet enean sollicitudin lorem quis bibendum.</span></p>
+                                    <cite>Gfx Partner</cite>
+                                </blockquote>
+                                <blockquote>
+                                    <p><span>Aenean sollicitudin lorem quis bibendum auctor nisi elit consequat ipsum nec sagittis sem nibh id elit lorem Ipsum proin gravida nibh vel velit auctor aliquet enean sollicitudin lorem quis bibendum.</span></p>
+                                    <cite>Gfx Partner</cite>
+                                </blockquote>
+                                <blockquote>
+                                    <p><span>Aenean sollicitudin lorem quis bibendum auctor nisi elit consequat ipsum nec sagittis sem nibh id elit lorem Ipsum proin gravida nibh vel velit auctor aliquet enean sollicitudin lorem quis bibendum.</span></p>
+                                    <cite>Gfx Partner</cite>
+                                </blockquote>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="container">
+
+                    <header class="heading style2 text-center">
+                        <h2>This Week’s Featured</h2>
+                        <p class="text-uppercase">Discover some of our best listings</p>
+                    </header>
+
+                    <div id="items-listing-area" class="clearfix grid-4 items-grid-style">
+                        <article class="item-spot featured">
+                            <a href="#" class="imgAsBg">
+                                <img src="assets/img/items/ad1.png" alt="dummy data">
+                            </a>
+                            <div class="item-content">
+                                <header>
+                                    <h4><a href="single.html">Canon SX Powershot A Great D-SLR</a></h4>
+                                    <div class="breadcrumb">
+                                        <ul>
+                                            <li><a href="#">Mobile Phones</a></li>
+                                            <li><a href="#">Apple</a></li>
+                                        </ul>
+                                    </div>
+                                    <ul class="item-info">
+                                        <li><i class="fa fa-map-marker"></i><a href="#">Melbourne</a></li>
+                                        <li><i class="fa fa-clock-o"></i>2:49 pm</li>
+                                    </ul>
+                                </header>
+                                <div class="item-actions text-center">
+                                    <ul class="contact-options">
+                                        <li><a href="#" class="fa fa-envelope tooltip-parent">
+                                            <span class="tooltip">Send Message</span>
+                                        </a></li>
+                                        <li><a href="#" class="fa fa-phone tooltip-parent">
+                                            <span class="tooltip">Mobile Number</span>
+                                        </a></li>
+                                        <li><a href="#" class="fa fa-heart tooltip-parent">
+                                            <span class="tooltip">save ad</span>
+                                        </a></li>
+                                    </ul>
+                                    <div class="price-tag">$206.90</div>
+                                </div>
+                                <div class="inner">
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adiscing das elited ultricies facilisis lacinia pell ...
+                                    </p>
+                                    <a class="view-item" href="single.html">view ad</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="item-spot">
+                            <a href="#" class="imgAsBg">
+                                <img src="assets/img/items/ad2.jpg" alt="dummy data">
+                            </a>
+                            <div class="item-content">
+                                <header>
+                                    <h4><a href="single.html">Canon SX Powershot A Great D-SLR</a></h4>
+                                    <div class="breadcrumb">
+                                        <ul>
+                                            <li><a href="#">Mobile Phones</a></li>
+                                            <li><a href="#">Apple</a></li>
+                                        </ul>
+                                    </div>
+                                    <ul class="item-info">
+                                        <li><i class="fa fa-map-marker"></i><a href="#">Melbourne</a></li>
+                                        <li><i class="fa fa-clock-o"></i>2:49 pm</li>
+                                    </ul>
+                                </header>
+                                <div class="item-actions text-center">
+                                    <ul class="contact-options">
+                                        <li><a href="#" class="fa fa-envelope tooltip-parent">
+                                            <span class="tooltip">Send Message</span>
+                                        </a></li>
+                                        <li><a href="#" class="fa fa-phone tooltip-parent">
+                                            <span class="tooltip">Mobile Number</span>
+                                        </a></li>
+                                        <li><a href="#" class="fa fa-heart tooltip-parent">
+                                            <span class="tooltip">save ad</span>
+                                        </a></li>
+                                    </ul>
+                                    <div class="price-tag">$206.90</div>
+                                </div>
+                                <div class="inner">
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adiscing das elited ultricies facilisis lacinia pell ...
+                                    </p>
+                                    <a class="view-item" href="single.html">view ad</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="item-spot">
+                            <a href="#" class="imgAsBg">
+                                <img src="assets/img/items/ad3.jpg" alt="dummy data">
+                            </a>
+                            <div class="item-content">
+                                <header>
+                                    <h4><a href="single.html">Canon SX Powershot A Great D-SLR</a></h4>
+                                    <div class="breadcrumb">
+                                        <ul>
+                                            <li><a href="#">Mobile Phones</a></li>
+                                            <li><a href="#">Apple</a></li>
+                                        </ul>
+                                    </div>
+                                    <ul class="item-info">
+                                        <li><i class="fa fa-map-marker"></i><a href="#">Melbourne</a></li>
+                                        <li><i class="fa fa-clock-o"></i>2:49 pm</li>
+                                    </ul>
+                                </header>
+                                <div class="item-actions text-center">
+                                    <ul class="contact-options">
+                                        <li><a href="#" class="fa fa-envelope tooltip-parent">
+                                            <span class="tooltip">Send Message</span>
+                                        </a></li>
+                                        <li><a href="#" class="fa fa-phone tooltip-parent">
+                                            <span class="tooltip">Mobile Number</span>
+                                        </a></li>
+                                        <li><a href="#" class="fa fa-heart tooltip-parent">
+                                            <span class="tooltip">save ad</span>
+                                        </a></li>
+                                    </ul>
+                                    <div class="price-tag">$206.90</div>
+                                </div>
+                                <div class="inner">
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adiscing das elited ultricies facilisis lacinia pell ...
+                                    </p>
+                                    <a class="view-item" href="single.html">view ad</a>
+                                </div>
+                            </div>
+
+                        </article>
+
+                        <article class="item-spot">
+                            <a href="#" class="imgAsBg">
+                                <img src="assets/img/items/ad4.jpg" alt="dummy data">
+                            </a>
+                            <div class="item-content">
+                                <header>
+                                    <h4><a href="single.html">Canon SX Powershot A Great D-SLR</a></h4>
+                                    <div class="breadcrumb">
+                                        <ul>
+                                            <li><a href="#">Mobile Phones</a></li>
+                                            <li><a href="#">Apple</a></li>
+                                        </ul>
+                                    </div>
+                                    <ul class="item-info">
+                                        <li><i class="fa fa-map-marker"></i><a href="#">Melbourne</a></li>
+                                        <li><i class="fa fa-clock-o"></i>2:49 pm</li>
+                                    </ul>
+                                </header>
+                                <div class="item-actions text-center">
+                                    <ul class="contact-options">
+                                        <li><a href="#" class="fa fa-envelope tooltip-parent">
+                                            <span class="tooltip">Send Message</span>
+                                        </a></li>
+                                        <li><a href="#" class="fa fa-phone tooltip-parent">
+                                            <span class="tooltip">Mobile Number</span>
+                                        </a></li>
+                                        <li><a href="#" class="fa fa-heart tooltip-parent">
+                                            <span class="tooltip">save ad</span>
+                                        </a></li>
+                                    </ul>
+                                    <div class="price-tag">$206.90</div>
+                                </div>
+                                <div class="inner">
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adiscing das elited ultricies facilisis lacinia pell ...
+                                    </p>
+                                    <a class="view-item" href="single.html">view ad</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="item-spot">
+                            <a href="#" class="imgAsBg">
+                                <img src="assets/img/items/ad5.jpg" alt="dummy data">
+                            </a>
+                            <div class="item-content">
+                                <header>
+                                    <h4><a href="single.html">Canon SX Powershot A Great D-SLR</a></h4>
+                                    <div class="breadcrumb">
+                                        <ul>
+                                            <li><a href="#">Mobile Phones</a></li>
+                                            <li><a href="#">Apple</a></li>
+                                        </ul>
+                                    </div>
+                                    <ul class="item-info">
+                                        <li><i class="fa fa-map-marker"></i><a href="#">Melbourne</a></li>
+                                        <li><i class="fa fa-clock-o"></i>2:49 pm</li>
+                                    </ul>
+                                </header>
+                                <div class="item-actions text-center">
+                                    <ul class="contact-options">
+                                        <li><a href="#" class="fa fa-envelope tooltip-parent">
+                                            <span class="tooltip">Send Message</span>
+                                        </a></li>
+                                        <li><a href="#" class="fa fa-phone tooltip-parent">
+                                            <span class="tooltip">Mobile Number</span>
+                                        </a></li>
+                                        <li><a href="#" class="fa fa-heart tooltip-parent">
+                                            <span class="tooltip">save ad</span>
+                                        </a></li>
+                                    </ul>
+                                    <div class="price-tag">$206.90</div>
+                                </div>
+                                <div class="inner">
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adiscing das elited ultricies facilisis lacinia pell ...
+                                    </p>
+                                    <a class="view-item" href="single.html">view ad</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="item-spot">
+                            <a href="#" class="imgAsBg">
+                                <img src="assets/img/items/ad6.jpg" alt="dummy data">
+                            </a>
+                            <div class="item-content">
+                                <header>
+                                    <h4><a href="single.html">Canon SX Powershot A Great D-SLR</a></h4>
+                                    <div class="breadcrumb">
+                                        <ul>
+                                            <li><a href="#">Mobile Phones</a></li>
+                                            <li><a href="#">Apple</a></li>
+                                        </ul>
+                                    </div>
+                                    <ul class="item-info">
+                                        <li><i class="fa fa-map-marker"></i><a href="#">Melbourne</a></li>
+                                        <li><i class="fa fa-clock-o"></i>2:49 pm</li>
+                                    </ul>
+                                </header>
+                                <div class="item-actions text-center">
+                                    <ul class="contact-options">
+                                        <li><a href="#" class="fa fa-envelope tooltip-parent">
+                                            <span class="tooltip">Send Message</span>
+                                        </a></li>
+                                        <li><a href="#" class="fa fa-phone tooltip-parent">
+                                            <span class="tooltip">Mobile Number</span>
+                                        </a></li>
+                                        <li><a href="#" class="fa fa-heart tooltip-parent">
+                                            <span class="tooltip">save ad</span>
+                                        </a></li>
+                                    </ul>
+                                    <div class="price-tag">$206.90</div>
+                                </div>
+                                <div class="inner">
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adiscing das elited ultricies facilisis lacinia pell ...
+                                    </p>
+                                    <a class="view-item" href="single.html">view ad</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="item-spot">
+                            <a href="#" class="imgAsBg">
+                                <img src="assets/img/items/ad7.jpg" alt="dummy data">
+                            </a>
+                            <div class="item-content">
+                                <header>
+                                    <h4><a href="single.html">Canon SX Powershot A Great D-SLR</a></h4>
+                                    <div class="breadcrumb">
+                                        <ul>
+                                            <li><a href="#">Mobile Phones</a></li>
+                                            <li><a href="#">Apple</a></li>
+                                        </ul>
+                                    </div>
+                                    <ul class="item-info">
+                                        <li><i class="fa fa-map-marker"></i><a href="#">Melbourne</a></li>
+                                        <li><i class="fa fa-clock-o"></i>2:49 pm</li>
+                                    </ul>
+                                </header>
+                                <div class="item-actions text-center">
+                                    <ul class="contact-options">
+                                        <li><a href="#" class="fa fa-envelope tooltip-parent">
+                                            <span class="tooltip">Send Message</span>
+                                        </a></li>
+                                        <li><a href="#" class="fa fa-phone tooltip-parent">
+                                            <span class="tooltip">Mobile Number</span>
+                                        </a></li>
+                                        <li><a href="#" class="fa fa-heart tooltip-parent">
+                                            <span class="tooltip">save ad</span>
+                                        </a></li>
+                                    </ul>
+                                    <div class="price-tag">$206.90</div>
+                                </div>
+                                <div class="inner">
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adiscing das elited ultricies facilisis lacinia pell ...
+                                    </p>
+                                    <a class="view-item" href="single.html">view ad</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="item-spot">
+                            <a href="#" class="imgAsBg">
+                                <img src="assets/img/items/ad8.jpg" alt="dummy data">
+                            </a>
+                            <div class="item-content">
+                                <header>
+                                    <h4><a href="single.html">Canon SX Powershot A Great D-SLR</a></h4>
+                                    <div class="breadcrumb">
+                                        <ul>
+                                            <li><a href="#">Mobile Phones</a></li>
+                                            <li><a href="#">Apple</a></li>
+                                        </ul>
+                                    </div>
+                                    <ul class="item-info">
+                                        <li><i class="fa fa-map-marker"></i><a href="#">Melbourne</a></li>
+                                        <li><i class="fa fa-clock-o"></i>2:49 pm</li>
+                                    </ul>
+                                </header>
+                                <div class="item-actions text-center">
+                                    <ul class="contact-options">
+                                        <li><a href="#" class="fa fa-envelope tooltip-parent">
+                                            <span class="tooltip">Send Message</span>
+                                        </a></li>
+                                        <li><a href="#" class="fa fa-phone tooltip-parent">
+                                            <span class="tooltip">Mobile Number</span>
+                                        </a></li>
+                                        <li><a href="#" class="fa fa-heart tooltip-parent">
+                                            <span class="tooltip">save ad</span>
+                                        </a></li>
+                                    </ul>
+                                    <div class="price-tag">$206.90</div>
+                                </div>
+                                <div class="inner">
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adiscing das elited ultricies facilisis lacinia pell ...
+                                    </p>
+                                    <a class="view-item" href="single.html">view ad</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="doc-footer style3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-4">
+                        <h6>Company</h6>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Feedback</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <h6>Sell Anything</h6>
+                        <div class="text-widget">
+                            <p>Fusce aliquet quam eget neque ultrices lla posuere felis id arcu blandit sagittis ellen ender vestibulum purus sagittis ellen ender.</p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <h6>Information</h6>
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="widget-social">
+                    <div class="social-links">
+                        <ul>
+                            <li><a class="fa fa-facebook" href="#"></a></li>
+                            <li><a class="fa fa-twitter" href="#"></a></li>
+                            <li><a class="fa fa-google-plus" href="#"></a></li>
+                            <li><a class="fa fa-instagram" href="#"></a></li>
+                            <li><a class="fa fa-dribbble" href="#"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="text-center">
+                    &copy; ADSPOT - Classified
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!--======================================
+   Modals
+   =======================================-->
+    <div id="signInModal" class="modal-container">
+        <a href="#" class="modal-overlay"> click to close modal</a>
+        <div class="inner">
+            <button class="close_modal"><i class="fa fa-remove"></i></button>
+            <div class="social_login_opt">
+                <div>
+                    <div class="opt-navigator dropdown-wrap">
+                        <button>open options</button>
+                        <div class="basic-dropdown">
+                            <ul class="social-drop-list">
+                                <li><a href="#"><i class="fa fa-twitter"></i>Twitter</a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i>Google+</a></li>
+                                <li><a href="#"><i class="fa fa-instagram"></i>Instagram</a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i>Linkedin</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="social-opts">
+                        <a href="#" class="opt-fb-login active">
+                            <i class="fa fa-facebook"></i>
+                            <span>Sign in with facebook</span>
+                        </a>
+                        <a href="#" class="opt-gp-login">
+                            <i class="fa fa-google-plus"></i>
+                            <span>Sign in with Google+</span>
+                        </a>
+                        <a href="#" class="opt-twitter-login">
+                            <i class="fa fa-twitter"></i>
+                            <span>Sign in with Twitter</span>
+                        </a>
+                        <a href="#" class="opt-instagram-login">
+                            <i class="fa fa-instagram"></i>
+                            <span>Sign in with Instagram</span>
+                        </a>
+                        <a href="#" class="opt-linkedin-login">
+                            <i class="fa fa-linkedin"></i>
+                            <span>Sign in with Linkedin</span>
+                        </a>
+                    </div>
+                </div>
+                <span class="split-opt">or</span>
+            </div>
+            <div class="modal-content">
+                <header>
+                    <h4>Welcome Back!</h4>
+                    <p>Please enter your details below</p>
+                </header>
+                <form action="/">
+                    <div class="field-block">
+                        <div class="labeled-input">
+                            <label>Username</label>
+                            <input title="title here" type="text">
+                        </div>
+                    </div>
+                    <div class="field-block">
+                        <div class="labeled-input">
+                            <label>Password</label>
+                            <input title="title here" type="password">
+                        </div>
+                    </div>
+                    <div class="row login-actions field-block">
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="custom-radio">
+                                <input type="radio" name="item-condition" id="login001">
+                                <label for="login001">Remember me</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 xs-text-left text-right">
+                            <a href="#">Forgot Password?</a>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-md btn-green block-element">Login Now</button>
+                    <div class="login-cta text-center">
+                        <p>Don't have an account?</p>
+                        <a href="#">Register here FREE</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="signUpModal" class="modal-container">
+        <a href="#" class="modal-overlay"> click to close modal</a>
+        <div class="inner">
+            <button class="close_modal"><i class="fa fa-remove"></i></button>
+            <div class="social_login_opt">
+                <div>
+                    <div class="opt-navigator dropdown-wrap">
+                        <button>open options</button>
+                        <div class="basic-dropdown">
+                            <ul class="social-drop-list">
+                                <li><a href="#"><i class="fa fa-twitter"></i>Twitter</a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i>Google+</a></li>
+                                <li><a href="#"><i class="fa fa-instagram"></i>Instagram</a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i>Linkedin</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="social-opts">
+                        <a href="#" class="opt-fb-login active">
+                            <i class="fa fa-facebook"></i>
+                            <span>Sign in with facebook</span>
+                        </a>
+                        <a href="#" class="opt-gp-login">
+                            <i class="fa fa-google-plus"></i>
+                            <span>Sign in with Google+</span>
+                        </a>
+                        <a href="#" class="opt-twitter-login">
+                            <i class="fa fa-twitter"></i>
+                            <span>Sign in with Twitter</span>
+                        </a>
+                        <a href="#" class="opt-instagram-login">
+                            <i class="fa fa-instagram"></i>
+                            <span>Sign in with Instagram</span>
+                        </a>
+                        <a href="#" class="opt-linkedin-login">
+                            <i class="fa fa-linkedin"></i>
+                            <span>Sign in with Linkedin</span>
+                        </a>
+                    </div>
+                </div>
+                <span class="split-opt">or</span>
+            </div>
+            <div class="modal-content">
+                <header>
+                    <h4>Welcome Back!</h4>
+                    <p>Please enter your details below</p>
+                </header>
+                <form action="/">
+                    <div class="field-block">
+                        <div class="labeled-input">
+                            <label>Username</label>
+                            <input title="title here" type="text">
+                        </div>
+                    </div>
+                    <div class="field-block">
+                        <div class="labeled-input">
+                            <label>Password</label>
+                            <input title="title here" type="password">
+                        </div>
+                    </div>
+                    <div class="field-block">
+                        <div class="icon-field">
+                            <span>+44</span>
+                            <input type="text" placeholder="Your Contact #">
+                        </div>
+                    </div>
+
+
+                    <button class="btn btn-md btn-green block-element">Signup Now</button>
+                    <div class="login-cta text-center"><br>
+                        By clicking Signup Now, you agree to <br>
+                        <a href="#">our Terms</a> and <a href="#">Privacy Policy</a>.
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!--========================================
+    Javascript
+    ===========================================-->
+    <script src="assets/lib/jquery/dist/jquery.min.js"></script>
+    <script src="assets/lib/slick-carousel/slick/slick.min.js"></script>
+    <script src="assets/js/app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+{
+    "name": "flagrow/bazaar",
+    "description": "The Flarum extension marketplace.",
+    "keywords": [
+        "extension",
+        "flarum",
+        "flagrow"
+    ],
+    "type": "flarum-extension",
+    "license": "cc-by-nc-nd",
+    "authors": [
+        {
+            "name": "Daniël Klabbers",
+            "email": "daniel@klabbers.email",
+            "homepage": "http://luceos.com"
+        },
+        {
+            "name": "Clark Winkelmann",
+            "email": "clark.winkelmann@gmail.com",
+            "homepage": "https://clarkwinkelmann.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/flagrow/bazaar/issues",
+        "source": "https://github.com/flagrow/bazaar"
+    },
+    "require": {
+        "flarum/core": "^0.1.0-beta.6",
+        "composer/composer": "^1.3",
+        "guzzlehttp/guzzle": "^6.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.8"
+    },
+    "extra": {
+        "flarum-extension": {
+            "title": "Flagrow Bazaar",
+            "icon": {
+                "name": "shopping-bag",
+                "backgroundColor": "#f4f4f4",
+                "color": "#5f4bb6"
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Flagrow\\Bazaar\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Flagrow\\Bazaar\\Tests\\": "tests/"
+        }
+    }
+}

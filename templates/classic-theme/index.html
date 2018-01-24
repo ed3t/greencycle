@@ -1,0 +1,202 @@
+{OVERALL_HEADER}<!-- home-one-info -->
+<section id="home-one-info" class="clearfix home-one"><!-- world -->
+    <div id="banner-two" style="background-image:url({SITE_URL}storage/banner/{BANNER_IMAGE});">
+        <div class="row text-center"><!-- banner -->
+            <div class="col-sm-12 ">
+                <div class="banner">
+                    <h1 class="title">{HEADING}</h1>
+
+                    <h3>{SUB_HEADING}</h3>
+                    <!-- banner-form -->
+                    <div class="banner-form">
+                        <form method="get" action="{LINK_LISTING}">
+                            <!-- category-change -->
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="dropdown category-dropdown"><a data-toggle="dropdown" href="#"><span
+                                            class="change-text">{LANG_SELECT-CATEGORY}</span><i
+                                            class="fa fa-navicon"></i></a>
+                                        {CAT_DROPDOWN}
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <input type="text" class="form-control" name="serachStr" placeholder="{LANG_WHAT} ?"
+                                           id="keywords">
+                                </div>
+                                <div class="col-md-3 banner-icon"><i class="fa fa-map-marker"></i>
+                                    <input type="text" id="searchStateCity" name="location" class="form-control"
+                                           placeholder="{LANG_WHERE} ?">
+                                    <input type="hidden" name="placetype" id="searchPlaceType" value="">
+                                    <input type="hidden" name="placeid" id="searchPlaceId" value="">
+                                </div>
+                                <div class="col-md-2">
+                                    <input type="hidden" id="input-maincat" name="searchBox" value=""/>
+                                    <input type="hidden" id="input-subcat" name="subcat" value=""/>
+                                    <button data-ajax-response='map' type="submit" name="searchform"
+                                            class="form-control"><i class="fa fa-search"></i> {LANG_SEARCH}
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- banner-form --></div>
+            </div>
+            <!-- banner --></div>
+        <!-- row --></div>
+    <!-- world -->
+    <div class="container"><!-- services -->
+        <div class="section services">
+            <style>
+                .single-service figure {
+                    display: none;
+                }
+            </style>
+            {LOOP: CAT}
+                <!-- single-service -->
+                <div class="single-service">
+                    <div class="services-icon"><i class="{CAT.icon}"></i></div>
+                    <h5><a href="{CAT.catlink}">{CAT.main_title}</a></h5>
+                    <ul>
+                        {CAT.sub_title}
+                    </ul>
+                </div>
+                <!-- single-service -->
+            {/LOOP: CAT}
+        </div>
+        <!-- services -->
+        <!-- quickad-section-Mobile -->
+        <div class="quickad-section" id="quickad-top">{TOP_ADSCODE}</div>
+        <!-- quickad-section-Mobile -->
+
+        <!-- featured-slide -->
+        <div class="section recommended-ads">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="featured-top">
+                        <h4>{LANG_PREMIUM-ADS}</h4>
+                    </div>
+                </div>
+            </div>
+            <!-- featured-slider -->
+            <div class="recommended-slider" id="serchlist">
+                <div id="recommended-slider-id">
+                    {LOOP: ITEM}
+                    <div class="quick-item IF(" {ITEM.highlight}"=="1"){ highlight {:IF}">
+                        <!-- item-image -->
+                        <div class="item-image-box">
+                            <div class="item-image"><a href="listing.php?cat={ITEM.cat_id}"><img
+                                    src="{SITE_URL}storage/products/screenshot/small_{ITEM.picture}" alt="Image"
+                                    class="img-responsive"></a>
+
+                                <div class="item-badges">IF("{ITEM.featured}"=="1"){<span
+                                        class="featured">{LANG_FEATURED}</span>{:IF}IF("{ITEM.urgent}"=="1"){<span>{LANG_URGENT}</span>{:IF}
+                                </div>
+                            </div>
+                            <!-- item-image -->
+                        </div>
+                        <div class="item-info">
+                            <!-- ad-info -->
+                            <div class="ad-info">
+                                <h4 class="item-title"><a href="{ITEM.link}">{ITEM.product_name}</a></h4>
+                                <ol class="breadcrumb">
+                                    <li><a href="{ITEM.catlink}">{ITEM.category}</a></li>
+                                    <li class="hidden"><a title="{ITEM.sub_category}" href="{ITEM.subcatlink}">{ITEM.sub_category}</a>
+                                    </li>
+                                </ol>
+                                <ul class="item-details">
+                                    <li><i class="fa fa-map-marker"></i><a href="{ITEM.citylink}">{ITEM.location}</a></li>
+                                    <li><i class="fa fa-clock-o"></i>{ITEM.created_at}</li>
+                                </ul>
+                                <div class="ad-meta"><span class="item-price"> {CURRENCY_SIGN} {ITEM.price} </span>
+                                    <ul class="contact-options pull-right" id="set-favorite">
+                                        <li><a href="#" data-item-id="{ITEM.id}" data-userid="{USER_ID}"
+                                               data-action="setFavAd" class="fav_{ITEM.id} fa fa-heart IF("{ITEM.favorite}"=="1"){ active {:IF}"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- ad-info -->
+                        </div>
+                        <!-- item-info -->
+                    </div>
+                    <!-- quick-item -->
+                    {/LOOP: ITEM}
+                </div>
+                <!-- featured-slider -->
+            </div>
+            <!-- #featured-slider -->
+        </div>
+        <!-- featured-slide -->
+
+        <!-- recent-slide -->
+        <div class="section recommended-ads">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="featured-top">
+                        <h4>{LANG_LATEST_ADS}</h4>
+                    </div>
+                </div>
+            </div>
+            <!-- recent-slider -->
+            <div class="recommended-slider" id="serchlist">
+                <div id="recent-slider-id">
+                    {LOOP: ITEM2}
+                    <div class="quick-item IF(" {ITEM2.highlight}"=="1"){ highlight {:IF}">
+                        <!-- item-image -->
+                        <div class="item-image-box">
+                            <div class="item-image"><a href="listing.php?cat={ITEM2.cat_id}"><img
+                                    src="{SITE_URL}storage/products/screenshot/small_{ITEM2.picture}" alt="Image"
+                                    class="img-responsive"></a>
+
+                                <div class="item-badges">
+                                    IF("{ITEM2.featured}"=="1"){<span class="featured">{LANG_FEATURED}</span>{:IF}
+                                    IF("{ITEM2.urgent}"=="1"){<span>{LANG_URGENT}</span>{:IF}
+                                </div>
+                            </div>
+                            <!-- item-image -->
+                        </div>
+                        <div class="item-info">
+                            <!-- ad-info -->
+                            <div class="ad-info">
+                                <h4 class="item-title"><a href="{ITEM2.link}">{ITEM2.product_name}</a></h4>
+                                <ol class="breadcrumb">
+                                    <li><a href="{ITEM2.catlink}">{ITEM2.category}</a></li>
+                                    <li class="hidden"><a title="{ITEM2.sub_category}" href="{ITEM2.subcatlink}">{ITEM2.sub_category}</a>
+                                    </li>
+                                </ol>
+                                <ul class="item-details">
+                                    <li><i class="fa fa-map-marker"></i><a href="{ITEM2.citylink}">{ITEM2.location}</a></li>
+                                    <li><i class="fa fa-clock-o"></i>{ITEM2.created_at}</li>
+                                </ul>
+                                <div class="ad-meta"><span class="item-price"> {CURRENCY_SIGN} {ITEM2.price} </span>
+                                    <ul class="contact-options pull-right" id="set-favorite">
+                                        <li><a href="#" data-item-id="{ITEM2.id}" data-userid="{USER_ID}" data-action="setFavAd"
+                                               class="fav_{ITEM2.id} fa fa-heart IF("{ITEM2.favorite}"=="1"){ active {:IF}"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- ad-info -->
+                        </div>
+                        <!-- item-info -->
+                    </div>
+                    <!-- quick-item -->
+                    {/LOOP: ITEM2}
+                </div>
+                <!-- recent-slider -->
+            </div>
+            <!-- #recent-slider -->
+        </div>
+        <!-- recent-slide -->
+
+        <div class="quickad-section" id="quickad-bottom">{BOTTOM_ADSCODE}</div>
+    </div>
+    <!-- container --></section>
+<!-- home-one-info -->
+<script>
+    var loginurl = "{LINK_LOGIN}?ref=index.php";
+</script>
+
+{OVERALL_FOOTER}
+
+
+
+

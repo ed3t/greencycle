@@ -1,0 +1,71 @@
+<!doctype html>
+<html dir="<?php echo e($direction); ?>" lang="<?php echo e($language); ?>">
+  <head>
+    <meta charset="utf-8">
+    <title><?php echo e($title); ?></title>
+    <meta name="description" content="<?php echo e($description); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <meta name="theme-color" content="<?php echo e(array_get($forum, 'attributes.themePrimaryColor')); ?>">
+    <?php if(! $allowJs): ?>
+      <meta name="robots" content="noindex" />
+    <?php endif; ?>
+
+    <?php foreach($cssUrls as $url): ?>
+      <link rel="stylesheet" href="<?php echo e($url); ?>">
+    <?php endforeach; ?>
+
+    <?php if($faviconUrl = array_get($forum, 'attributes.faviconUrl')): ?>
+      <link href="<?php echo e($faviconUrl); ?>" rel="shortcut icon">
+    <?php endif; ?>
+
+    <?php echo $head; ?>
+
+  </head>
+
+  <body>
+    <?php echo $layout; ?>
+
+
+    <div id="modal"></div>
+    <div id="alerts"></div>
+
+    <?php if($allowJs): ?>
+      <script>
+        document.getElementById('flarum-loading').style.display = 'block';
+      </script>
+
+      <?php foreach($jsUrls as $url): ?>
+        <script src="<?php echo e($url); ?>"></script>
+      <?php endforeach; ?>
+
+      <script>
+        document.getElementById('flarum-loading').style.display = 'none';
+        <?php if(! $debug): ?>
+        try {
+        <?php endif; ?>
+          var app = System.get('flarum/app').default;
+          var modules = <?php echo json_encode($modules); ?>;
+
+          for (var i in modules) {
+            var module = System.get(modules[i]);
+            if (module.default) module.default(app);
+          }
+
+          app.boot(<?php echo json_encode($payload); ?>);
+        <?php if(! $debug): ?>
+        } catch (e) {
+          window.location += (window.location.search ? '&' : '?') + 'nojs=1';
+          throw e;
+        }
+        <?php endif; ?>
+      </script>
+    <?php else: ?>
+      <script>
+        window.history.replaceState(null, null, window.location.toString().replace(/([&?]nojs=1$|nojs=1&)/, ''));
+      </script>
+    <?php endif; ?>
+
+    <?php echo $foot; ?>
+
+  </body>
+</html>

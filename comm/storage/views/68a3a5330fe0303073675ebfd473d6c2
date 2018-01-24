@@ -1,0 +1,28 @@
+<div id="flarum-loading" style="display: none">
+  <?php echo e($translator->trans('core.views.content.loading_text')); ?>
+
+</div>
+
+<?php if($allowJs): ?>
+  <noscript>
+    <div class="Alert">
+      <div class="container">
+        <?php echo e($translator->trans('core.views.content.javascript_disabled_message')); ?>
+
+      </div>
+    </div>
+
+    <?php echo $content; ?>
+
+  </noscript>
+<?php else: ?>
+  <div class="Alert Alert--error">
+    <div class="container">
+      <?php echo e($translator->trans('core.views.content.load_error_message')); ?>
+
+    </div>
+  </div>
+
+  <?php echo $content; ?>
+
+<?php endif; ?>

@@ -1,0 +1,30 @@
+<?php
+$discussion = $document->data;
+$postsCount = count($discussion->relationships->posts->data);
+?>
+<div class="container">
+    <h2><?php echo e($discussion->attributes->title); ?></h2>
+
+    <div>
+        <?php foreach($posts as $post): ?>
+            <div>
+                <?php $user = $getResource($post->relationships->user->data); ?>
+                <h3><?php echo e($user ? $user->attributes->username : $translator->trans('core.lib.username.deleted_text')); ?></h3>
+                <div class="Post-body">
+                    <?php echo $post->attributes->contentHtml; ?>
+
+                </div>
+            </div>
+
+            <hr>
+        <?php endforeach; ?>
+    </div>
+
+    <?php if($page > 1): ?>
+        <a href="<?php echo e($url(['page' => $page - 1])); ?>">&laquo; <?php echo e($translator->trans('core.views.discussion.previous_page_button')); ?></a>
+    <?php endif; ?>
+
+    <?php if($page < $postsCount / 20): ?>
+        <a href="<?php echo e($url(['page' => $page + 1])); ?>"><?php echo e($translator->trans('core.views.discussion.next_page_button')); ?> &raquo;</a>
+    <?php endif; ?>
+</div>

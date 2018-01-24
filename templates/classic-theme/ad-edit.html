@@ -1,0 +1,373 @@
+{OVERALL_HEADER}
+<link rel="stylesheet" href="{SITE_URL}templates/{TPL_NAME}/assets/plugins/tokenfield/css/bootstrap-tokenfield.min.css">
+<link rel="stylesheet" href="{SITE_URL}templates/{TPL_NAME}/assets/plugins/tokenfield/css/tokenfield-typeahead.min.css">
+<!-- Ad-details -->
+<section id="main" class="clearfix ad-details-page">
+    <div class="container">
+        <div class="breadcrumb-section"><!-- breadcrumb -->
+            <ol class="breadcrumb">
+                <li><a href="{LINK_INDEX}">Home</a></li>
+                <li>{HEADER_TEXT}</li>
+                <div class="pull-right back-result"><a href="{LINK_LISTING}"><i class="fa fa-angle-double-left"></i>
+                    {LANG_BACK-RESULT}</a></div>
+            </ol>
+            <!-- breadcrumb -->
+        </div>
+        <div class="adpost-details">
+            <div class="row">
+                <div class="col-md-9">IF("{HEADER_NOTE}"!=""){
+                    <div class="alert alert-info"><a href="#" class="alert-link">{HEADER_NOTE}</a>.</div>
+                    <br>
+                    {:IF}{LOOP: ERRORS}
+                    <article class="byMsg byMsgError" id="formErrors">! {ERRORS.message}</article>
+                    {/LOOP: ERRORS}
+                    <form method="post" action="#" enctype="multipart/form-data">
+                        <fieldset>
+                            <div class="section postdetails">
+                                <h4>{HEADER_TEXT}<span
+                                        class="label-wrap hidden-sm hidden-xs">IF("{FEATURED}"=="1"){<span
+                                        class="label featured"> {LANG_FEATURED}</span> {:IF}IF("{URGENT}"=="1"){<span
+                                        class="label urgent"> {LANG_URGENT}</span> {:IF}IF("{HIGHLIGHT}"=="1"){<span
+                                        class="label highlight"> {LANG_HIGHLIGHT}</span> {:IF}</span></h4>
+
+                                <div class="form-group selected-product">
+                                    <ul class="select-category list-inline">
+                                        <li><a href="ad-post.html"><span class="select"><i class="{CATICON}"></i></span>{CATEGORY}</a>
+                                        </li>
+                                        <li class="active"><a href="#">{SUBCATEGORY}</a></li>
+                                    </ul>
+                                    <input type="hidden" value="1" name="editcat"/>
+                                    <button type="submit" name="edit" class="edit"
+                                            style="border: none;background: transparent;"><i class="fa fa-pencil"></i>Edit
+                                    </button>
+                                </div>
+                                <div class="row form-group add-title">
+                                    <label class="col-sm-3 label-title">{LANG_AD-TITLE}<span
+                                            class="required">*</span></label>
+
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" name="title" id="adtitle"
+                                               value="{TITLE}" placeholder="e.g. Apple iPhone SE 2016" required>
+                                    </div>
+                                </div>
+                                <div class="row form-group item-description">
+                                    <label class="col-sm-3 label-title">{LANG_DESCRIPTION}<span
+                                            class="required">*</span></label>
+
+                                    <div class="col-sm-9">
+                                        <textarea class="form-control" id="textarea" placeholder="{LANG_TYPE-SOMETHING}"
+                                                  rows="8" name="content" required>{DESCRIPTION}</textarea>
+                                    </div>
+                                </div>
+                                <div class="row form-group add-image">
+                                    <label class="col-sm-3 label-title">{LANG_UPLOAD-PHOTO}<span
+                                            class="required">*</span> <span>({LANG_ADD-MULTI-PHOTO})</span> </label>
+
+                                    <div class="col-sm-9">
+                                        <div class="file-upload-previews">{ITEM_SCREENS}</div>
+                                        <div class="file-upload" IF(
+                                        "{MAXIMGLNT}"=="0"){ style="display: none" {:IF}>
+                                        <input type="file" name="item_screen[]" class="file-upload-input with-preview"
+                                               multiple title="Click to add files" maxlength="{MAXIMGLNT}" accept="jpg"
+                                               id="maxImgCount">
+                                        <span>{LANG_DRAG-IMAGE-HERE} {LANG_PRE-SELECTED} {IMGCOUNT}</span></div>
+                                    <input type="hidden" name="deletePrevImg" id="deletePrevImg" value=""/>
+                                </div>
+                            </div>
+                            <div class="row form-group select-price">
+                                <label class="col-sm-3 label-title">{LANG_PRICE} ({CURRENCY_SIGN})</label>
+
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="price" value="{PRICE}"
+                                           placeholder="Price">
+
+                                    <div class="checkbox">
+                                        <label for="negotiable">
+                                            <input type="checkbox" name="negotiable" value="1" id="negotiable">
+                                            I want to negotiate </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row form-group tags">
+                                <label class="col-sm-3 label-title">{LANG_TAGS}<span class="required">*</span></label>
+
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="tags" value="{TAGS}" required id="adtags" data-limit="5">
+                                    <code>Max Limit 5</code>
+                                </div>
+                            </div>
+                </div>
+                <!-- section -->
+                <div class="section seller-info">
+                    <div id="custom-fields">
+                        IF("{SHOWCUSTOMFIELD}"=="1"){<h4>{LANG_ADDITIONAL-INFO}</h4>{:IF}
+                        {LOOP: CUSTOMFIELDS}
+                        IF("{CUSTOMFIELDS.type}"=="text"){
+                        <div class="row form-group {CUSTOMFIELDS.title}">
+                            <label class="col-sm-3 label-title">{CUSTOMFIELDS.title}</label>
+
+                            <div class="col-sm-9">{CUSTOMFIELDS.textbox}</div>
+                        </div>
+                        {:IF}
+                        IF("{CUSTOMFIELDS.type}"=="textarea"){
+                        <div class="row form-group {CUSTOMFIELDS.title}">
+                            <label class="col-sm-3 label-title">{CUSTOMFIELDS.title}</label>
+
+                            <div class="col-sm-9">{CUSTOMFIELDS.textarea}</div>
+                        </div>
+                        {:IF}
+                        IF("{CUSTOMFIELDS.type}"=="select"){
+                        <div class="row form-group {CUSTOMFIELDS.title}">
+                            <label class="col-sm-3 label-title">{CUSTOMFIELDS.title}</label>
+
+                            <div class="col-sm-9">
+                                <select class="form-control" name="custom[{CUSTOMFIELDS.id}]" {CUSTOMFIELDS.required}>
+                                    <option value="" selected>{CUSTOMFIELDS.title}</option>
+                                    {CUSTOMFIELDS.selectbox}
+                                </select>
+                            </div>
+                        </div>
+                        {:IF}
+                        IF("{CUSTOMFIELDS.type}"=="radio"){
+                        <div class="row form-group {CUSTOMFIELDS.title}">
+                            <label class="col-sm-3 label-title">{CUSTOMFIELDS.title}</label>
+
+                            <div class="col-sm-9">{CUSTOMFIELDS.radio}</div>
+                        </div>
+                        {:IF}
+                        IF("{CUSTOMFIELDS.type}"=="checkbox"){
+                        <div class="row form-group {CUSTOMFIELDS.title}">
+                            <label class="col-sm-3 label-title">{CUSTOMFIELDS.title}</label>
+
+                            <div class="col-sm-9">
+                                <div class="checkbox">{CUSTOMFIELDS.checkboxBootstrap}</div>
+                            </div>
+                        </div>
+                        {:IF}
+                        {/LOOP: CUSTOMFIELDS}
+                    </div>
+                    <h4>{LANG_CONTACT}</h4>
+
+                    <div class="row form-group">
+                        <label class="col-sm-3 label-title">City<span class="required">*</span></label>
+                        <div class="col-sm-9" id="select-post-ad-city">
+                            <input type="text" id="findCityStateCountry" name="cityfield" placeholder="{LANG_WHERE} ?" autocomplete="off"  class="form-control" value="{CITYFIELD}">
+                            <div id="FindResultDisplay"></div>
+                            <input type="hidden" name="city" id="searchPlaceId" value="{CITY}">
+                            <input type="hidden" name="state" id="searchplaceState" value="{STATE}">
+                            <input type="hidden" name="country" id="searchplaceCountry" value="{COUNTRY}">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="col-sm-3 label-title">{LANG_ADDRESS}<span class="required">*</span></label>
+
+                        <div class="col-sm-9">
+                            <input type="text" class="mar-bottom-0 form-control" name="location"
+                                   id="address-autocomplete" placeholder="Address" value="{LOCATION}" required="">
+                            <input type="hidden" id="latitude" name="latitude" value="{LATITUDE}"/>
+                            <input type="hidden" id="longitude" name="longitude" value="{LONGITUDE}"/>
+
+                            <div class="map height-200px shadow" id="map"></div>
+                            <p class="note" style="opacity: 1">{LANG_DRAG-MAP-MARKER}.</p>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="col-sm-3 label-title">{LANG_MOB-NO}</label>
+
+                        <div class="col-sm-9">
+                            <input type="text" name="phone" class="form-control" value="{PHONE}"
+                                   placeholder="e.g. +11-123456789">
+
+                            <div class="checkbox">
+                                <label for="hidePhone">
+                                    <input type="checkbox" name="hide_phone" value="1" id="hidePhone">
+                                    Hide the phone number on this ads. </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- section -->
+                <div class="section premium" IF("{FEATURED}{URGENT}{HIGHLIGHT}"=="111"){ style="display: none" {:IF}>
+                <h4>{LANG_MAKE-PREMIUM} ({LANG_OPTIONAL})</h4>
+
+                <div class="well">
+                    <p>{LANG_PRE-AD-PROMOTE}</p>
+                    <table class="table">
+                        <tbody>
+                        IF("{FEATURED}"!="1"){
+                        <tr>
+                            <td>
+                                <div class="checkbox">
+                                    <label for="optionsRadios2">
+                                        <input type="checkbox" name="featured" id="optionsRadios2" value="1"
+                                               onclick="fillPrice(this,{FEATURED_FEE});">
+                                        {LANG_FEATURED-AD} </label>
+                                </div>
+                            </td>
+                            <td><p style="margin: 15px 0px 0px 0;">{CURRENCY_SIGN}{FEATURED_FEE}</p></td>
+                        </tr>
+                        {:IF}
+                        IF("{URGENT}"!="1"){
+                        <tr>
+                            <td>
+                                <div class="checkbox">
+                                    <label for="optionsRadios1">
+                                        <input type="checkbox" name="urgent" id="optionsRadios1" value="1"
+                                               onclick="fillPrice(this,{URGENT_FEE});">
+                                        {LANG_URGENT-AD}</label>
+                                </div>
+                            </td>
+                            <td><p style="margin: 15px 0px 0px 0;">{CURRENCY_SIGN}{URGENT_FEE}</p></td>
+                        </tr>
+                        {:IF}
+                        IF("{HIGHLIGHT}"!="1"){
+                        <tr>
+                            <td>
+                                <div class="checkbox">
+                                    <label for="optionsRadios3">
+                                        <input type="checkbox" name="highlight" id="optionsRadios3" value="1"
+                                               onclick="fillPrice(this,{HIGHLIGHT_FEE});">
+                                        {LANG_HIGHLIGHT-AD} </label>
+                                </div>
+                            </td>
+                            <td><p style="margin: 15px 0px 0px 0;">{CURRENCY_SIGN}{HIGHLIGHT_FEE}</p></td>
+                        </tr>
+                        {:IF}
+                        <tr>
+                            <td><h4>{LANG_SELECT-PAY-METHOD}.</h4>
+                                {LOOP: PAYMENT_TYPES}
+                                <div class="radio">
+                                    <input type="radio" id="{PAYMENT_TYPES.title}" value="{PAYMENT_TYPES.id}"
+                                           name="payment_id">
+                                    <label for="{PAYMENT_TYPES.title}"> {PAYMENT_TYPES.title}</label>
+                                </div>
+                                {/LOOP: PAYMENT_TYPES}
+                            </td>
+                        </tr>
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <td>&emsp;</td>
+                            <td class="text-right"><strong style="color: #000; font-size: 16px; font-weight: 600;">Total
+                                : {CURRENCY_SIGN}<span id="totalPrice">0.0</span></strong></td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+            <!-- section -->
+            <!--Contact Option section-->
+            <div class="section premium">
+                <h4>{LANG_CONTACT_OPTION}</h4>
+
+                <div class="well">
+                    <p>{LANG_CONTACT_OPTION_PARA}</p>
+
+                    <div class="checkbox">
+                        <label for="c_phone" class="{CONTACT_PHONE}">
+                            <input type="checkbox" name="contact_phone" id="c_phone" value="phone" {CONTACT_PHONE}>
+                            {LANG_BY_PHONE}
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label for="c_email" class="{CONTACT_EMAIL}">
+                            <input type="checkbox" name="contact_email" id="c_email" value="email" {CONTACT_EMAIL}>
+                            {LANG_BY_EMAIL}
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label for="c_chat" class="{CONTACT_CHAT}">
+                            <input type="checkbox" name="contact_chat" id="c_chat" value="chat" {CONTACT_CHAT}>
+                            {LANG_INSTANT_MESSAGE}
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!--Contact Option section-->
+
+            IF("{RESUBMIT}"=="1"){
+            <div class="section seller-info">
+                <h4>{LANG_MSG-REVIEWER}</h4>
+
+                <div class="row form-group item-comments">
+                    <label class="col-sm-3 label-title">{LANG_COMMENT}<span class="required">*</span></label>
+
+                    <div class="col-sm-9">
+                        <textarea class="form-control" id="comments" placeholder="{LANG_COMMENT-PLACEHOLDER}" rows="8"
+                                  name="comments"></textarea>
+                    </div>
+                </div>
+            </div>
+            {:IF}
+            <div class="termStatement">
+                <input type="hidden" id="input-catid" name="catid" value="{CATID}">
+                <input type="hidden" id="input-subcatid" name="subcatid" value="{SUBCATID}">
+                <button type="submit" name="submit" class="btn btn-primary">{LANG_UPDATE}</button>
+                <span>
+                <input type="hidden" name="agree" id="aggrement" value="1">
+                {LANG_CLICK-CON} <a class="link" href="#">{LANG_TERM-CON}</a> {LANG_AND}<a class="link" href="#">{LANG_PRIVACY}</a>.</span>
+            </div>
+            </fieldset>
+            </form>
+            <!-- form --> </div>
+        <!-- quick-rules -->
+        <div class="col-md-3 col-sm-3">
+            <div class="text-center">
+                <div class="promo-text-box"><i class="fa-photo fa fa-4x icon-color-1"></i>
+
+                    <h3><strong>{LANG_POST-FREE-CLASS}</strong></h3>
+
+                    <p> {LANG_POST-FREE-BUSINESS}! </p>
+                </div>
+                <div class="panel sidebar-panel">
+                    <div class="panel-heading uppercase">
+                        <small><strong>{LANG_HOW-SELL-QUICK}?</strong></small>
+                    </div>
+                    <div class="panel-content">
+                        <div class="panel-body text-left">
+                            <ul class="list-check">
+                                <li> {LANG_USE-BRIEF}</li>
+                                <li> {LANG_POST-CORRECT}</li>
+                                <li> {LANG_ADD-NICE-PHOTO}Add nice photos to your ad</li>
+                                <li> {LANG_REASONABLE-PRICE}Put a reasonable price</li>
+                                <li> {LANG_CHECK-BEFORE-PUBLISH}Check the item before publish</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- quick-rules --></div>
+    <!-- photos-ad --> </div>
+    </div>
+    <!-- container --></section>
+<!-- Ad-details -->
+<script>
+    var _latitude = '{LATITUDE}';
+    var _longitude = '{LONGITUDE}';
+    var element = "map";
+    var color = '#9C27B0';
+    var getCity = false;
+    var path = '{SITE_URL}templates/{TPL_NAME}/';
+    var Countries = '{DEFAULT_COUNTRY}';
+    if (Countries != "") {
+        var str = Countries;
+        var str_array = str.split(',');
+        var getCountry = [];
+        for (var i = 0; i < str_array.length; i++) {
+            getCountry.push(str_array[i]);
+        }
+    }
+    else {
+        var getCountry = "all";
+    }
+    simpleMap(_latitude, _longitude, element, true);
+</script>
+
+<script type='text/javascript' src='{SITE_URL}templates/{TPL_NAME}/js/jQuery.MultiFile.min.js'></script>
+<script type='text/javascript' src='{SITE_URL}templates/{TPL_NAME}/js/ad_post_js.js'></script>
+<script type='text/javascript' src='{SITE_URL}templates/{TPL_NAME}/assets/plugins/tokenfield/bootstrap-tokenfield.min.js'></script>
+<script>
+    $('#adtags').tokenfield();
+</script>
+{OVERALL_FOOTER}

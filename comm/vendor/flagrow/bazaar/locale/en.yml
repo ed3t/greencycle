@@ -1,0 +1,85 @@
+flagrow-bazaar:
+    admin:
+        loader:
+            is_loading: Processing..
+            error: An error occured. Check the History tab and your Flarum log for details. Don't be afraid to report it to us.
+            refresh: Refresh page
+            report_issue: Report an issue
+        nav:
+            title: Bazaar
+            description: The extension marketplace.
+        header:
+            extensions: Browse extensions
+            tasks: Tasks history
+        modal:
+            settings:
+                title: Flagrow Bazaar
+                field:
+                    apiToken: API token
+                    apiTokenDescription: This api token is required to access the Flagrow extension api. If already set, you're good to go!
+            connect-bazaar:
+                title: Connect
+                description: >
+                    Connect your Flarum forum to your personal account on {host} to unlock advanced features; including
+                    a dashboard that gives you an health overview of all your connected Flarum installations. We will
+                    add more functionality like notifications when your forum contains outdated extensions or the ability
+                    to update all Flarum installations centrally.
+            requirements:
+                file-permissions:
+                    title: File permissions
+                    description: >
+                        It seems Bazaar has insufficient permissions to write files
+                        and/or directories, please review the list below. For further
+                        information, refer to <a>the wiki</a>.
+                php-memory_limit:
+                    title: Memory limit
+                    description: >
+                        We recommend allowing PHP to use at least {required} of memory, your php.ini currently allows {limit}.
+                        Although we try to increase the memory limit during runtime, success depends on your hosting environment.
+                        For further information, refer to <a>the wiki</a>.
+        page:
+            button:
+                more: More
+                install: Install
+                uninstall: Uninstall
+                enable: Enable
+                disable: Disable
+                update: Update
+                connect: Connect
+                favorite_button: "Favorite extension"
+                remove_favorite_button: "Remove extension from your favorites"
+            extension:
+                installed: Extension is installed
+                enabled: Extension is enabled
+                vendor: By {vendor}
+                favorited: One of your favorites
+                outdated: "Extension is outdated, please update to version {new}"
+            task:
+                header:
+                    status: Status
+                    command: Command
+                    output: Output
+                    time: Time
+                    details: Details
+                attribute:
+                    created_at: Created at
+                    started_at: Started at
+                    finished_at: Finished at
+                status:
+                    success: Success
+                    exception: An exception occured
+                    working: Work in progress
+                    unknown: Unknown
+                command:
+                    install: Install {extension}
+                    update: Update {extension}
+                    uninstall: Uninstall {extension}
+                group:
+                    today: Today
+                    lastmonth: Last month
+                    older: Older
+        search:
+            placeholder: Search extensions
+            filter_installed: Show only installed extensions
+            filter_update_required: Show only extension with an update available
+            filter_favorited: Show only favorited extensions

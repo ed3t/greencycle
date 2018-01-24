@@ -1,0 +1,36 @@
+<?php
+require_once('config.php');
+$link['INDEX']          = $config['site_url'].'';
+$link['INDEX1']         = $config['site_url'].'index1';
+$link['INDEX2']         = $config['site_url'].'index2';
+$link['INDEX3']         = $config['site_url'].'index3';
+$link['MESSAGE']        = $config['site_url'].'message';
+$link['LOGIN']          = $config['site_url'].'login';
+$link['LOGOUT']         = $config['site_url'].'logout';
+$link['SIGNUP']         = $config['site_url'].'signup';
+$link['FORGOT']         = $config['site_url'].'forgot';
+$link['LISTING']        = $config['site_url'].'listing';
+$link['AD-DETAIL']      = $config['site_url'].'ad';
+$link['POST-ITEM']        = $config['site_url'].'post-item';
+$link['VIEWALL']        = $config['site_url'].'viewall';
+$link['DASHBOARD']      = $config['site_url'].'dashboard';
+$link['PROFILE']        = $config['site_url'].'profile';
+$link['MYADS']          = $config['site_url'].'myads';
+$link['PENDINGADS']     = $config['site_url'].'pending-ads';
+$link['FAVADS']         = $config['site_url'].'favourite-ads';
+$link['HIDDENADS']      = $config['site_url'].'hidden-ads';
+$link['RESUBMITADS']    = $config['site_url'].'resubmission-ads';
+$link['TRANSACTION']    = $config['site_url'].'transaction';
+$link['EDIT-PROFILE']   = $config['site_url'].'profile-edit';
+$link['ACCOUNT_SETTING'] = $config['site_url'].'account-setting';
+$link['REPORT']         = $config['site_url'].'report';
+$link['CONTACT']        = $config['site_url'].'contact';
+$link['SITEMAP']        = $config['site_url'].'sitemap';
+$link['COUNTRY']        = $config['site_url'].'countries';
+$link['COMM']        = $config['site_url'].'comm';
+$link['FAQ']            = $config['site_url'].'faq';
+$link['FEEDBACK']       = $config['site_url'].'feedback';
+$link['HOWITWORK']      = $config['site_url'].'howitworks';
+$link['COUNTRIES']      = $config['site_url'].'countries';
+$link['HTML']           = $config['site_url'].'html';
+?>

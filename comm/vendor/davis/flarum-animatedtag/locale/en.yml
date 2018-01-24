@@ -1,0 +1,8 @@
+davis-animatedtag:
+  admin:
+    animationtype: "Animation Type"
+    animationtypes:
+      0: "Triangles"
+      1: "Bubbles"
+      2: "Snow"
+      3: "Cell (Not Working)"

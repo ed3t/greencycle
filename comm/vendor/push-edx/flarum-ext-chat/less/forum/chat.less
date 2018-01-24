@@ -1,0 +1,269 @@
+.chat {
+    position: fixed;
+    bottom: 0;
+    z-index: 5;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    max-width: 100%;
+    width: 600px;
+    color: #000;
+
+    .frame {
+        position: relative;
+        float: right;
+        max-width: 100%;
+        width: 600px;
+        background-color: white;
+        border-radius: 4px 4px 0 0;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.35);
+        outline: none;
+
+        #chat-header {
+            width: 100%;
+            height: 30px;
+            background-color: #506B90;
+            border-radius: 4px 4px 0 0;
+            cursor: pointer;
+
+            h2 {
+                display: inline-block;
+                color: #fff;
+                font-size: 18px;
+                font-weight: normal;
+                margin: 0 10px 0 15px;
+                line-height: 30px;
+            }
+
+            p {
+                display: inline-block;
+                position: relative;
+                float: right;
+                top: 5px;
+                margin: 0;
+                padding: 0;
+                margin-right: 5px;
+
+                img {
+                    height: 20px;
+                }
+            }
+
+            p[data-title]:hover:after {
+                content: attr(data-title);
+                padding: 4px 8px;
+                color: #FFF;
+                position: absolute;
+                right: 0;
+                top: -120%;
+                white-space: nowrap;
+                z-index: 20px;
+                -moz-border-radius: 5px;
+                -webkit-border-radius: 5px;
+                border-radius: 5px;
+                -moz-box-shadow: 0px 0px 4px #222;
+                -webkit-box-shadow: 0px 0px 4px #222;
+                box-shadow: 0px 0px 4px #222;
+                background-image: -moz-linear-gradient(top, #000, #111);
+                background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #000),color-stop(1, #111));
+                background-image: -webkit-linear-gradient(top, #000, #111);
+                background-image: -moz-linear-gradient(top, #000, #111);
+                background-image: -ms-linear-gradient(top, #000, #111);
+                background-image: -o-linear-gradient(top, #000, #111);
+            }
+        }
+
+        #chat-input {
+            resize: none;
+            width: 100%;
+            padding: 5px 10px 5px 10px;
+            bottom: 0;
+            outline: none;
+            border-top: 2px solid #A0A0A0;
+            border-right: 0;
+            border-left: 0;
+            border-bottom: 0;
+        }
+
+        #chat-input.reaching-limit {
+            width: 90%;
+        }
+
+        #chat-limitter {
+            display: none;
+            border-top: 2px solid #A0A0A0;
+            border-left: 1px dashed #A0A0A0;
+            text-align: center;
+            line-height: 29px;
+            color: #D41212;
+            font-weight: bold;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+        }
+
+        #chat-limitter.reaching-limit {
+            display: block;
+            width: 10%;
+            float: right;
+        }
+
+        #chat-input:disabled {
+            background-color: #f0f0f0;
+        }
+
+        .loading {
+            position: absolute;
+            top: 425px;
+            float: left;
+            right: 15px;
+        }
+
+        .loading-old {
+            padding-left: 525px;
+        }
+
+        .wrapper {
+            overflow: auto;
+            height: 390px;
+            max-height: 50vh;
+
+            .message-wrapper {
+                padding-left: 15px;
+                padding-top: 2.5px;
+                padding-bottom: 2.5px;
+
+                .avatar-wrapper {
+                    position: relative;
+                    display:table-cell;
+                    padding-right: 5px;
+                    vertical-align: middle;
+
+                    .avatar {
+                        width: 26px;
+                        height: 26px;
+                        border-radius: 26px;
+                        font-size: 13px;
+                        line-height: 26px;
+                        cursor: pointer;
+                    }
+                }
+
+                span[data-name]:hover:after {
+                    content: attr(data-name);
+                    padding: 4px 8px;
+                    color: #FFF;
+                    position: absolute;
+                    white-space: nowrap;
+                    z-index: 20px;
+                    -moz-border-radius: 5px;
+                    -webkit-border-radius: 5px;
+                    border-radius: 5px;
+                    -moz-box-shadow: 0px 0px 4px #222;
+                    -webkit-box-shadow: 0px 0px 4px #222;
+                    box-shadow: 0px 0px 4px #222;
+                    background-image: -moz-linear-gradient(top, #000, #111);
+                    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #000),color-stop(1, #111));
+                    background-image: -webkit-linear-gradient(top, #000, #111);
+                    background-image: -moz-linear-gradient(top, #000, #111);
+                    background-image: -ms-linear-gradient(top, #000, #111);
+                    background-image: -o-linear-gradient(top, #000, #111);
+                }
+
+                .message {
+                    display:table-cell;
+                    padding-top: 3px;
+                    word-break: break-word;
+                    padding-right: 15px;
+                    white-space: pre-wrap;
+
+                    img {
+                        vertical-align: middle;
+                        max-height: 25px;
+                    }
+
+                    a {
+                        color: #426799;
+                    }
+                }
+
+                .message p,
+                .message div:not(.LoadingIndicator),
+                .UserMention {
+                    display: inline;
+                    margin: 0;
+                    padding: 0;
+                }
+
+                .UserMention {
+                    display: inline-block;
+                    color: #7088a9;
+                }
+
+                .clear {
+                    clear: both;
+                }
+            }
+
+            .message-wrapper:nth-child(odd) {
+                background-color: #f3f6f9;
+            }
+        }
+
+        .wrapper::-webkit-scrollbar-track
+        {
+        	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        	background-color: #F5F5F5;
+        }
+
+        .wrapper::-webkit-scrollbar
+        {
+        	width: 6px;
+        	background-color: #F5F5F5;
+        }
+
+        .wrapper::-webkit-scrollbar-thumb
+        {
+        	background-color: #666;
+        }
+    }
+
+    .frame.active {
+        box-shadow: 0 0 0 2px #377F21, 0 2px 6px rgba(0,0,0,0.35);
+    }
+}
+
+.chat.hidden {
+    .frame {
+        #chat-input {
+            display: none;
+        }
+        .wrapper {
+            display: none;
+        }
+    }
+
+    .frame.active {
+        box-shadow: none;
+    }
+}
+
+.chat.left-aligned {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.chat.left {
+    right: 0;
+}
+
+/*
+    Text formatter
+    p {
+        margin: 0
+    }
+    img {
+        border: 0;
+        max-height: 20px;
+        display: inline-block;
+        vertical-align: top;
+    }
+*/

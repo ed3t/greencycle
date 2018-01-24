@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{PAGE_TITLE} - {SITE_TITLE}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Bylancer">
+    <meta name="keywords" content="{META_KEYWORDS}">
+    <meta name="description" content="{META_DESCRIPTION}">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{SITE_URL}templates/{TPL_NAME}/assets/img/favicon.png">
+
+    <style>
+        :root {
+            --theme-color: transparent;
+        }
+    </style>
+    <script>
+        var themecolor = '{THEME_COLOR}';
+        var mapcolor = '{MAP_COLOR}';
+        var siteurl = '{SITE_URL}';
+        var template_name = '{TPL_NAME}';
+    </script>
+    <link rel='stylesheet' href='{SITE_URL}templates/{TPL_NAME}/assets/fonts/font-awesome.css' type='text/css'/>
+    <link rel='stylesheet' href='{SITE_URL}templates/{TPL_NAME}/assets/fonts/elegant-fonts.css' type='text/css' />
+
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato%3A400%2C300%2C700%2C900%2C400italic%7COpen+Sans%3A700italic%2C400%2C800%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.7.3' type='text/css' />
+    <link rel='stylesheet'  href='{SITE_URL}templates/{TPL_NAME}/assets/bootstrap/css/bootstrap.css' type='text/css' />
+    <link rel='stylesheet' href='{SITE_URL}templates/{TPL_NAME}/assets/css/bootstrap-select.min.css' type='text/css' />
+
+    <link rel='stylesheet'  href='{SITE_URL}templates/{TPL_NAME}/assets/css/owl.carousel.css' type='text/css' />
+    <link rel='stylesheet' href='{SITE_URL}templates/{TPL_NAME}/assets/css/trackpad-scroll-emulator.css' type='text/css' />
+    <link rel='stylesheet' href='{SITE_URL}templates/{TPL_NAME}/assets/css/jquery.nouislider.min.css' type='text/css' />
+    <link rel='stylesheet'  href='{SITE_URL}templates/{TPL_NAME}/assets/css/style.css' type='text/css' />
+    <link rel='stylesheet'  href='{SITE_URL}templates/{TPL_NAME}/assets/css/map-marker.css' type='text/css' />
+    <link rel='stylesheet' href='{SITE_URL}templates/{TPL_NAME}/assets/css/main-theme.css' type='text/css' />
+    <link rel='stylesheet' href='{SITE_URL}templates/{TPL_NAME}/assets/materialize/css/materialize.css' type='text/css' />
+    <link rel="stylesheet" href="{SITE_URL}templates/{TPL_NAME}/assets/css/styleswitcher.css" >
+    <!--Sweet Alert CSS -->
+    <link href="{SITE_URL}templates/{TPL_NAME}/assets/plugins/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
+
+    <script type='text/javascript' src='{SITE_URL}templates/{TPL_NAME}/assets/js/jquery-2.2.1.min.js'></script>
+    <script type='text/javascript' src='{SITE_URL}templates/{TPL_NAME}/assets/js/jquery-migrate-1.2.1.min.js'></script>
+
+    <script type='text/javascript' src='http://maps.google.com/maps/api/js?key={GMAP_KEY}&#038;libraries=places%2Cgeometry&#038;ver=2.2.1'></script>
+    <script type='text/javascript' src='{SITE_URL}templates/{TPL_NAME}/assets/js/richmarker-compiled.js'></script>
+    <script type='text/javascript' src='{SITE_URL}templates/{TPL_NAME}/assets/js/markerclusterer_packed.js'></script>
+    <script type='text/javascript' src='{SITE_URL}templates/{TPL_NAME}/assets/js/gmapAdBox.js'></script>
+    <script type='text/javascript' src='{SITE_URL}templates/{TPL_NAME}/assets/js/maps.js'></script>
+    <script type='text/javascript' src='{SITE_URL}templates/{TPL_NAME}/assets/js/jquery.style-switcher.js'></script>
+
+    <script>var ajaxurl = "{SITE_URL}user-ajax.php";</script>
+</head>
+<body>
+
+<!--*********************************Modals*************************************-->
+<div class="modal" id="loginPopUp">
+    <i class="loading-icon fa fa-circle-o-notch fa-spin"></i>
+    <div class="modal-dialog width-400px" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <div class="section-title">
+                    <h2></h2>
+                </div>
+            </div>
+            <div class="socialLoginHere">
+                <div class="row text-center">
+                    <div class="col-xs-6"><a class="loginBtn loginBtn--facebook" onclick="fblogin()"><i class="fa fa-facebook"></i> <span>Facebook</span></a></div>
+                    <div class="col-xs-6"><a class="loginBtn loginBtn--google" onclick="gmlogin()"><i class="fa fa-google-plus"></i> <span>Google+</span></a></div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div id="login-status" class="info-notice" style="display: none;margin-bottom: 20px">
+                <div class="content-wrapper">
+                    <div id="login-detail">
+                        <div id="login-status-icon-container"><span class="login-status-icon"></span></div>
+                        <div id="login-status-message">Authenticating...</div>
+                    </div>
+                </div>
+            </div>
+            <form action="ajaxlogin" id="lg-form">
+                <div class="modal-body">
+                <form class="form inputs-underline">
+                    <div class="form-group">
+                        <label for="username">{LANG_USERNAME} / {LANG_EMAIL}</label>
+                        <input type="email" class="form-control" id="username" placeholder="{LANG_USERNAME} / {LANG_EMAIL}">
+                    </div>
+                    <!--end form-group-->
+                    <div class="form-group">
+                        <label for="password">{LANG_PASSWORD}</label>
+                        <input type="password" class="form-control" id="password" placeholder="{LANG_PASSWORD}">
+                    </div>
+                    <div class="form-group center">
+                        <button id="login" type="button" class="btn btn-primary width-100">{LANG_LOGIN}</button>
+                    </div>
+                    <!--end form-group-->
+                </form>
+
+                <hr>
+
+                <a href="login.php?fstart=1">{LANG_FORGOTPASS}?</a>
+                <!--end form-->
+            </div>
+                <!--end modal-body-->
+            </form>
+        </div>
+        <!--end modal-content-->
+    </div>
+    <!--end modal-dialog-->
+</div>
+<!--*********************************Modals*************************************-->
+
+<div class="page-wrapper" id="page-header">
+    <!--start header section header v1-->
+    <header class="header-section-default header-main nav-left hidden-sm hidden-xs">
+        <div class="container">
+            <div class="header-left">
+                <div class="logo">
+                    <a href="{LINK_INDEX}">
+                        <img src="{SITE_URL}storage/logo/{SITE_LOGO}" alt="logo">
+                    </a>
+                </div>
+                <nav class="navi main-nav">
+                    <ul>
+                        <li><a href="{LINK_INDEX}">{LANG_HOME}</a>
+                        </li>
+                        <li><a href="{LINK_LISTING}">{LANG_LISTING}</a></li>
+                        <li><a href="{LINK_CONTACT}">{LANG_CONTACT}</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="header-right">
+                IF("{LOGGED_IN}"=="0"){
+                <div class="user">
+                    <a href="#" data-toggle="modal" data-target="#loginPopUp" class="waves-effect pad-lr-10 modal-trigger">{LANG_SIGN-IN}</a>
+                    <a href="{LINK_SIGNUP}" class="waves-effect pad-lr-10">{LANG_REGISTER}</a>
+                    <a href="{LINK_POST-ITEM}" class="btn btn-rounded btn-default waves-effect">{LANG_POST-FREE-AD}</a>
+                </div>
+                {:IF}
+                IF("{LOGGED_IN}&{WCHAT}"=="1&on"){
+                <div class="user">
+                    <a href="{LINK_MESSAGE}" class="waves-effect message-link"><i class="fa fa-envelope"></i> </a>
+                </div>
+                {:IF}
+                IF("{LOGGED_IN}"=="1"){
+                <ul class="account-action">
+
+                    <li class="">
+                        <span class="hidden-sm hidden-xs">{USERNAME} <i class="fa fa-angle-down"></i></span>
+                        <img src="{SITE_URL}storage/profile/{USERPIC}" alt="{USERNAME}" class="user-image" height="22" width="22">
+
+                        <div class="account-dropdown">
+                            <ul>
+                                <li><a href="{LINK_DASHBOARD}" class="waves-effect"> <i class="fa fa-file"></i>{LANG_MY-CLASSIFIED}</a></li>
+                                <li><a href="{LINK_PROFILE}?username={USERNAME}" class="waves-effect"> <i class="fa fa-user"></i>{LANG_PROFILE-PUBLIC}</a></li>
+                                <li><a href="{LINK_POST-ITEM}" class="waves-effect"> <i class="fa fa-plus-circle"></i>{LANG_POST-FREE-AD}</a></li>
+                                <li><a href="{LINK_MYADS}" class="waves-effect"> <i class="fa fa-building"></i>{LANG_MY-ADS-LISTINGS}</a></li>
+                                <li><a href="{LINK_FAVADS}" class="waves-effect"> <i class="fa fa-heart"></i>{LANG_FAVOURITE-ADS}</a></li>
+                                <li><a href="{LINK_PENDINGADS}" class="waves-effect"> <i class="fa fa-clock-o"></i>{LANG_MY-PENDING-ADS}</a></li>
+                                <li><a href="{LINK_LOGOUT}" class="waves-effect"> <i class="fa fa-unlock"></i>{LANG_LOGOUT}</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+
+                {:IF}
+
+                IF("{LANG_SEL}"=="1"){
+                <div class="dropdown lang-dropdown" id="lang-dropdown">
+                    <button class="btn dropdown-toggle btn-default-lite" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="false"><span id="selected_lang">EN</span><span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
+                        {LOOP: LANGS}
+                        <li role="presentation" data-lang="{LANGS.value}"><a role="menuitem" tabindex="-1" rel="alternate" hreflang="fr" href="#">{LANGS.name}</a></li>
+                        {/LOOP: LANGS}
+                    </ul>
+                </div>
+                {:IF}
+            </div>
+        </div>
+    </header>
+    <div class="header-mobile visible-sm visible-xs">
+        <div class="container">
+            <!--start mobile nav-->
+            <div class="mobile-nav">
+                <span class="nav-trigger"><i class="fa fa-navicon"></i></span>
+                <div class="nav-dropdown main-nav-dropdown"></div>
+            </div>
+            <!--end mobile nav-->
+            <div class="header-logo">
+                <a href="{LINK_INDEX}"><img src="{SITE_URL}storage/logo/{SITE_LOGO}" alt="logo"></a>
+            </div>
+            <div class="header-user">
+
+                <ul class="account-action">
+                    <li>
+                        IF("{LOGGED_IN}"=="0"){
+                        <span class="user-image"><i class="fa fa-ellipsis-v"></i></span>
+                        {:IF}
+                        IF("{LOGGED_IN}"=="1"){
+                        <img src="{SITE_URL}storage/profile/{USERPIC}" alt="{USERNAME}" class="user-image" width="36" height="36">
+                        {:IF}
+                        <div class="account-dropdown">
+                            <ul>
+                                IF("{LOGGED_IN}"=="0"){
+                                <li><a href="{LINK_LOGIN}" class="waves-effect"><i class="fa fa-user"></i> {LANG_SIGN-IN}</a></li>
+                                <li><a href="{LINK_SIGNUP}" class="waves-effect"><i class="fa fa-lock"></i> {LANG_REGISTER}</a></li>
+                                <li><a href="{LINK_POST-ITEM}" class="waves-effect"><i class="fa fa-plus-circle"></i> {LANG_POST-FREE-AD}</a></li>
+                                {:IF}
+                                IF("{LOGGED_IN}"=="1"){
+                                <li><a href="{LINK_DASHBOARD}" class="waves-effect"> <i class="fa fa-file"></i>{LANG_MY-CLASSIFIED}</a></li>
+                                <li><a href="{LINK_PROFILE}?username={USERNAME}" class="waves-effect"> <i class="fa fa-user"></i>{LANG_PROFILE-PUBLIC}</a></li>
+                                <li><a href="{LINK_POST-ITEM}" class="waves-effect"> <i class="fa fa-plus-circle"></i>{LANG_POST-FREE-AD}</a></li>
+                                <li><a href="{LINK_MYADS}" class="waves-effect"> <i class="fa fa-building"></i>{LANG_MY-ADS-LISTINGS}</a></li>
+                                <li><a href="{LINK_FAVADS}" class="waves-effect"> <i class="fa fa-heart"></i>{LANG_FAVOURITE-ADS}</a></li>
+                                <li><a href="{LINK_PENDINGADS}" class="waves-effect"> <i class="fa fa-clock-o"></i>{LANG_MY-PENDING-ADS}</a></li>
+                                <li><a href="{LINK_LOGOUT}" class="waves-effect"> <i class="fa fa-unlock"></i>{LANG_LOGOUT}</a></li>
+                                {:IF}
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--end header section header v1-->

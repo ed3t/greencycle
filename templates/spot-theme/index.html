@@ -1,0 +1,863 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+
+    <title>{PAGE_TITLE} - {SITE_TITLE}</title>
+    <!--========================================
+    Meta
+    ===========================================-->
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Bylancer">
+    <meta name="keywords" content="{META_KEYWORDS}">
+    <meta name="description" content="{META_DESCRIPTION}">
+    <style>
+        :root {
+            --theme-color: transparent;
+        }
+    </style>
+    <script>
+        var themecolor = '{THEME_COLOR}';
+        var mapcolor = '{MAP_COLOR}';
+        var siteurl = '{SITE_URL}';
+        var template_name = '{TPL_NAME}';
+    </script>
+
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- Web Application Manifest -->
+
+    <!-- Add to home screen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="xDocs">
+    <link rel="icon" sizes="192x192" href="{SITE_URL}templates/{TPL_NAME}/assets/img/basic/chrome-touch-icon-192x192.png">
+
+    <!-- Add to home screen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Web Starter Kit">
+    <link rel="apple-touch-icon" href="{SITE_URL}templates/{TPL_NAME}/assets/img/basic/apple-touch-icon.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="{SITE_URL}templates/{TPL_NAME}/assets/img/basic/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#55acee">
+    <!-- Color the status bar on mobile devices -->
+    <meta name="theme-color" content="#55acee">
+
+    <!--========================================
+    CSS
+    ===========================================-->
+    <!--3rd party plugins-->
+    <link href="{SITE_URL}templates/{TPL_NAME}/assets/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="{SITE_URL}templates/{TPL_NAME}/assets/lib/slick-carousel/slick/slick.css" rel="stylesheet" type="text/css">
+    <!--custom icons for classified website-->
+    <link href="{SITE_URL}templates/{TPL_NAME}/assets/css/adspoticons.css" rel="stylesheet" type="text/css">
+    <!--main styles for template-->
+    <link href="{SITE_URL}templates/{TPL_NAME}/assets/css/style.css" rel="stylesheet" type="text/css">
+    <!--put your custom css on the file below-->
+    <link href="{SITE_URL}templates/{TPL_NAME}/assets/css/custom.css" rel="stylesheet" type="text/css">
+    <!--put fonts here-->
+    <link href="{SITE_URL}templates/{TPL_NAME}/assets/fonts/adspoticons.ttf" rel="stylesheet" type="text/css">
+    <link href="{SITE_URL}templates/{TPL_NAME}/assets/fonts/adspoticons.eot" rel="stylesheet" type="text/css">
+    <link href="{SITE_URL}templates/{TPL_NAME}/assets/fonts/adspoticons.woff" rel="stylesheet" type="text/css">
+    <link href="{SITE_URL}templates/{TPL_NAME}/assets/fonts/adspoticons.svg" rel="stylesheet" type="text/css">
+    <link href="{SITE_URL}templates/{TPL_NAME}/assets/lib/font-awesome/fonts/fontawesome-webfont.ttf" rel="stylesheet" type="text/css">
+    <link href="{SITE_URL}templates/{TPL_NAME}/assets/lib/font-awesome/fonts/fontawesome-webfont.eot" rel="stylesheet" type="text/css">
+    <link href="{SITE_URL}templates/{TPL_NAME}/assets/lib/font-awesome/fonts/fontawesome-webfont.svg" rel="stylesheet" type="text/css">
+    <link href="{SITE_URL}templates/{TPL_NAME}/assets/lib/font-awesome/fonts/fontawesome-webfont.woff" rel="stylesheet" type="text/css">
+    <link href="{SITE_URL}templates/{TPL_NAME}/assets/lib/font-awesome/fonts/fontawesome-webfont.woff2" rel="stylesheet" type="text/css">
+    <link href="{SITE_URL}templates/{TPL_NAME}/assets/css/flags/flags.min.css" rel="stylesheet" type="text/css">
+    <link href="{SITE_URL}templates/{TPL_NAME}/assets/css/responsive.css" rel="stylesheet" type="text/css">
+    <link href="{SITE_URL}templates/{TPL_NAME}/assets/css/styleswitcher.css" rel="stylesheet" type="text/css">
+    <link href="{SITE_URL}templates/{TPL_NAME}/assets/css/icofont.css" rel="stylesheet" type="text/css">
+    <link href="{SITE_URL}templates/{TPL_NAME}/assets/css/map/map-marker.css" rel="stylesheet" type="text/css">
+    <link href="{SITE_URL}templates/{TPL_NAME}/assets/css/pe-icon-7-stroke.css" rel="stylesheet" type="text/css">
+    <link href="{SITE_URL}templates/{TPL_NAME}/assets/css/sweetalert.css" rel="stylesheet" type="text/css">
+
+
+</head>
+<body>
+    <div class="web-app">
+        <div class="doc-header style4">
+            <div class="container">
+                <div class="inner">
+                    <div class="app-logo">
+                        <button class="mobile-control mob-menu-trigger"><i class="adicon-hamburger"></i></button>
+                        <a href="{SITE_URL}"><img src="{SITE_URL}templates/{TPL_NAME}/assets/img/basic/logo.png" alt="adspot"></a>
+                    </div>
+                    <div class="clearfix">
+                        <ul class="quick-actions style2 pull-left">
+                            <li class="dropdown-wrap">
+                                <a href="#">English <i class="fa fa-caret-down"></i></a>
+                                <div class="basic-dropdown">
+                                    <ul class="country-list">
+                                        <li><a href="#"><img src="{SITE_URL}templates/{TPL_NAME}/assets/img/flags/ukflag.png" alt="dummy">English (UK)</a></li>
+                                        <li><a href="#"><img src="{SITE_URL}templates/{TPL_NAME}/assets/img/flags/france.png" alt="dummy">France</a></li>
+                                        <!-- <li><a href="#"><img src="assets/img/flags/germany.png" alt="dummy">German</a></li> -->
+                                        <li><a href="#"><img src="{SITE_URL}templates/{TPL_NAME}/assets/img/flags/russian.png" alt="dummy">Russian</a></li>
+                                        <li><a href="#"><img src="{SITE_URL}templates/{TPL_NAME}/assets/img/flags/china.png" alt="dummy">Chinese</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a class="modal-trigger" href="#signInModal">Login</a></li>
+                            <li><a class="modal-trigger" href="#signUpModal">Register</a></li>
+                        </ul>
+
+                        <ul class="quick-actions style3 pull-right">
+                            <li class="dropdown-wrap wide">
+                                <a href="#"><i class="adicon-cart"></i></a>
+                                <div class="basic-dropdown wide">
+                                    <div class="short-cart">
+                                        <ul>
+                                            <li>
+                                                <figure><img src="assets/img/items/ad1.png" alt="dummy"></figure>
+                                                <a href="#" class="item-title">Iphone 6 Plus 16GB</a>
+                                                <span>$229.00</span>
+                                                <a href="#" class="remove-item"><i class="fa fa-close"></i></a>
+                                            </li>
+                                            <li>
+                                                <figure><img src="assets/img/items/ad2.jpg" alt="dummy"></figure>
+                                                <a href="#" class="item-title">Iphone 6 Plus 16GB</a>
+                                                <span>$229.00</span>
+                                                <a href="#" class="remove-item"><i class="fa fa-close"></i></a>
+                                            </li>
+                                            <li>
+                                                <figure><img src="assets/img/items/ad3.jpg" alt="dummy"></figure>
+                                                <a href="#" class="item-title">Iphone 6 Plus 16GB</a>
+                                                <span>$229.00</span>
+                                                <a href="#" class="remove-item"><i class="fa fa-close"></i></a>
+                                            </li>
+                                        </ul>
+                                        <table>
+                                            <tr>
+                                                <td>Total Price</td>
+                                                <td><strong>885.00 USD</strong></td>
+                                            </tr>
+                                        </table>
+                                        <a href="cart.html" class="btn btn-transparent block-element">View Cart</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li><a class="nav-trigger" href="#"><i class="adicon-hamburger"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sliding-nav">
+            <a class="close-sliding-nav" href="#">Close nav</a>
+            <nav class="slide-nav-list">
+                <ul>
+                    <li class="parent">
+                        <a href="javascript:return;">Demos</a>
+                        <ul>
+                            <li><a href="home2.html">Demo1 - Focus</a></li>
+                            <li><a href="home3.html">Demo2 - Expressive</a></li>
+                            <li><a href="home4.html">Demo3 - Minimal</a></li>
+                            <li><a href="home5.html">Demo4 - Fancy</a></li>
+                        </ul>
+                    </li>
+                    <li class="parent">
+                        <a href="#">Classified</a>
+                        <ul>
+                            <li><a href="home-default.html">Home</a></li>
+                            <li><a href="listing.html">Ads Archive</a></li>
+                            <li><a href="single.html">Ad Single</a></li>
+                            <li><a href="create.html">Create Ad</a></li>
+                            <li><a href="dashboard.html">Dashboard</a></li>
+                        </ul>
+                    </li>
+                    <li class="parent">
+                        <a  href="javascript:return;">Shop</a>
+                        <ul>
+                            <li><a href="shop-index.html">Shop Home</a></li>
+                            <li><a href="shop-listing.html">Archive</a></li>
+                            <li><a href="shop-single.html">Single</a></li>
+                            <li><a href="cart.html">Cart</a></li>
+                            <li><a href="checkout.html">Checkout</a></li>
+                        </ul>
+                    </li>
+                    <li class="parent">
+                        <a  href="javascript:return;">Pages</a>
+                        <ul>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="blog-single.html">Blog Single</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="terms.html">Terms</a></li>
+                        </ul>
+                    </li>
+                    <li class="parent">
+                        <a  href="javascript:return;">Shortcodes</a>
+                        <ul>
+                            <li><a href="elements-shortcodes.html">Elements</a></li>
+                            <li><a href="typography.html">Typography</a></li>
+                           <li><a href="elements-bootstrap.html">Bootstrap Components</a></li><li><a href="buttons.html">Buttons</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+        <div class="mobile-menu-wrap">
+            <a href="#" class="closeMobilMenu">close the mobile menu</a>
+            <nav class="mobile-menu">
+                <div class="search-widget">
+                    <input type="text" placeholder="search">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </div>
+                <ul class="menu-list">
+                    <li><a href="create.html">Create an Ad</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="listing.html">Ads Listing Page</a></li>
+                    <li><a href="how-adspot-works.html">How this works</a></li>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="contact.html">Contact us</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="blog-single.html">Blog Single</a></li>
+                    <li><a href="shop-index.html">Shop Page</a></li>
+                    <li><a href="shop-listing.html">Shop Archive</a></li>
+                    <li><a href="cart.html">Cart Page</a></li>
+                    <li><a href="checkout.html">Checkout Page</a></li>
+                    <li><a href="elements-shortcodes.html">Checkout Page</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="app-canvas">
+
+            <div class="main-banner imgAsBg hero-banner banner-overlay">
+                <img src="{SITE_URL}templates/{TPL_NAME}/assets/img/headerbg3.jpg" alt="dummy">
+                <div class="inner">
+                    <div class="container">
+                        <header>
+                            <h2>The Classified <br>Marketplace</h2>
+                            <div class="fancy-label">
+                                <span>79.508 live Ads on adspot</span>
+                            </div>
+                        </header>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-search">
+                <div class="container">
+                    <form action="/">
+                        <div class="search-filter">
+                            <div class="radio-dropdown">
+                                <i class="fa fa-bars"></i>
+                                <button>Select city</button>
+                                <ul>
+                                    <li class="custom-radio">
+                                        <input type="radio" id="create0221" name="item-brand-name">
+                                        <label for="create0221">Bradford</label>
+                                    </li>
+                                    <li class="custom-radio">
+                                        <input type="radio" id="create0231" name="item-brand-name">
+                                        <label for="create0231">Cambridge</label>
+                                    </li>
+                                    <li class="custom-radio">
+                                        <input type="radio" id="create0241" name="item-brand-name">
+                                        <label for="create0241">Chester</label>
+                                    </li>
+                                    <li class="custom-radio">
+                                        <input type="radio" id="create0251" name="item-brand-name">
+                                        <label for="create0251">Durham</label>
+                                    </li>
+                                    <li class="custom-radio">
+                                        <input type="radio" id="create0261" name="item-brand-name">
+                                        <label for="create0261">Glasgow</label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="search-filter">
+                            <div class="radio-dropdown">
+                                <i class="fa fa-bars"></i>
+                                <button>All Categories</button>
+                                <ul>
+                                    <li class="custom-radio">
+                                        <input type="radio" id="search0221" name="item-cat-name">
+                                        <label for="search0221">Vehicles</label>
+                                    </li>
+                                    <li class="custom-radio">
+                                        <input type="radio" id="search0231" name="item-cat-name">
+                                        <label for="search0231">Mobiles</label>
+                                    </li>
+                                    <li class="custom-radio">
+                                        <input type="radio" id="search0241" name="item-cat-name">
+                                        <label for="search0241">Electronics</label>
+                                    </li>
+                                    <li class="custom-radio">
+                                        <input type="radio" id="search0251" name="item-cat-name">
+                                        <label for="search0251">Furniture</label>
+                                    </li>
+                                    <li class="custom-radio">
+                                        <input type="radio" id="search0261" name="item-cat-name">
+                                        <label for="search0261">Jobs</label>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="search-widget-wrap">
+                            <div class="search-widget style2">
+                                <input type="text" placeholder="search">
+                                <button class="btn" type="submit">Search Ads</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <section class="section style2">
+                <div class="container">
+                    <header class="heading big text-center">
+                        <h1>World’s <strong>Biggest</strong> Classified Marketplace</h1>
+                        <p class="text-uppercase">sell &amp; purchase anything</p>
+                    </header>
+
+                    <div class="featured-items row">
+
+                        <div class="col-xs-12 col-sm-4">
+                            <div class="item-thumb">
+                                <img src="{SITE_URL}templates/{TPL_NAME}/assets/img/items/1a.jpg" alt="dummy">
+                                <h3>Some fancy title here</h3>
+                                <div class="basic-info">
+                                    <span><sup>$</sup>201.06</span>
+                                    <span class="cat bg1">Vehicles</span>
+                                </div>
+                                <a href="single.html">Open details</a>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-4">
+                            <div class="item-thumb">
+                                <img src="{SITE_URL}templates/{TPL_NAME}/assets/img/items/2a.jpg" alt="dummy">
+                                <h3>Some fancy title here</h3>
+                                <div class="basic-info">
+                                    <span><sup>$</sup>201.06</span>
+                                    <span class="cat bg2">Mobiles</span>
+                                </div>
+                                <a href="single.html">Open details</a>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-4">
+                            <div class="item-thumb">
+                                <img src="{SITE_URL}templates/{TPL_NAME}/assets/img/items/3a.jpg" alt="dummy">
+                                <h3>Some fancy title here</h3>
+                                <div class="basic-info">
+                                    <span><sup>$</sup>201.06</span>
+                                    <span class="cat bg3">Electronics</span>
+                                </div>
+                                <a href="single.html">Open details</a>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-4">
+                            <div class="item-thumb">
+                                <img src="{SITE_URL}templates/{TPL_NAME}/assets/img/items/4a.jpg" alt="dummy">
+                                <h3>Some fancy title here</h3>
+                                <div class="basic-info">
+                                    <span><sup>$</sup>201.06</span>
+                                    <span class="cat bg9">Animals</span>
+                                </div>
+                                <a href="single.html">Open details</a>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-4">
+                            <div class="item-thumb">
+                                <img src="{SITE_URL}templates/{TPL_NAME}/assets/img/items/5a.jpg" alt="dummy">
+                                <h3>Some fancy title here</h3>
+                                <div class="basic-info">
+                                    <span><sup>$</sup>201.06</span>
+                                    <span class="cat bg10">Fashion</span>
+                                </div>
+                                <a href="single.html">Open details</a>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-4">
+                            <div class="item-thumb">
+                                <img src="{SITE_URL}templates/{TPL_NAME}/assets/img/items/6a.jpg" alt="dummy">
+                                <h3>Some fancy title here</h3>
+                                <div class="basic-info">
+                                    <span><sup>$</sup>201.06</span>
+                                    <span class="cat bg6">Real Estate</span>
+                                </div>
+                                <a href="single.html">Open details</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="section pb-0 white-bg">
+                <header class="heading long text-center imgAsBg">
+                    <img src="{SITE_URL}templates/{TPL_NAME}/assets/img/headerbg5.jpg" alt="dummy">
+                    <h1>How it works?</h1>
+                    <span>4 easy steps to go</span>
+                </header>
+
+                <div class="container">
+                    <div class="walk-through">
+
+                        <div class="text-with-icons style2">
+                            <div class="widget-icon">
+                                <span class="fa fa-key"></span>
+                            </div>
+                            <h6>Join Us</h6>
+                            <p>Lorem ipsum dolor amet potenti simply free esquam.</p>
+                        </div>
+
+                        <div class="text-with-icons style2">
+                            <div class="widget-icon">
+                                <span class="fa fa-pencil"></span>
+                            </div>
+                            <h6>Create Ad</h6>
+                            <p>Lorem ipsum dolor amet potenti simply free esquam.</p>
+                        </div>
+
+                        <div class="text-with-icons style2">
+                            <div class="widget-icon">
+                                <span class="fa fa-bullhorn"></span>
+                            </div>
+                            <h6>Get Offers</h6>
+                            <p>Lorem ipsum dolor amet potenti simply free esquam.</p>
+                        </div>
+
+                        <div class="text-with-icons style2">
+                            <div class="widget-icon">
+                                <span class="fa fa-check"></span>
+                            </div>
+                            <h6>Sell It</h6>
+                            <p>Lorem ipsum dolor amet potenti simply free esquam.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <header class="heading style2 text-center">
+                        <h1>Plans & Pricing</h1>
+                        Chose any great plan
+                    </header>
+
+                    <div class="pricing-tables clearfix">
+                        <div class="pricing">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <td>
+                                            <span class="plan"><span>Standard</span></span>
+                                            <sup>$</sup>29<sub>/month</sub>
+                                            <hr>
+                                        </td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>24/7 Support</td></tr>
+                                    <tr><td>Unlimited Ads</td></tr>
+                                    <tr><td>Ads Reviews</td></tr>
+                                    <tr><td>Featured Ads</td></tr>
+                                    <tr><td>Post Online Ads</td></tr>
+                                    <tr><td>Check Statistics</td></tr>
+                                    <tr><td>Video & Image Ads</td></tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td>
+                                            <a href="#" class="btn">Get started</a>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                        <div class="pricing">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <td>
+                                        <span class="plan"><span>business</span></span>
+                                        <sup>$</sup>29<sub>/month</sub>
+                                        <hr>
+                                    </td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr><td>24/7 Support</td></tr>
+                                <tr><td>Unlimited Ads</td></tr>
+                                <tr><td>Ads Reviews</td></tr>
+                                <tr><td>Featured Ads</td></tr>
+                                <tr><td>Post Online Ads</td></tr>
+                                <tr><td>Check Statistics</td></tr>
+                                <tr><td>Video & Image Ads</td></tr>
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                    <td>
+                                        <a href="#" class="btn">Get started</a>
+                                    </td>
+                                </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                        <div class="pricing">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <td>
+                                        <span class="plan"><span>Premium</span></span>
+                                        <sup>$</sup>29<sub>/month</sub>
+                                        <hr>
+                                    </td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr><td>24/7 Support</td></tr>
+                                <tr><td>Unlimited Ads</td></tr>
+                                <tr><td>Ads Reviews</td></tr>
+                                <tr><td>Featured Ads</td></tr>
+                                <tr><td>Post Online Ads</td></tr>
+                                <tr><td>Check Statistics</td></tr>
+                                <tr><td>Video & Image Ads</td></tr>
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                    <td>
+                                        <a href="#" class="btn">Get started</a>
+                                    </td>
+                                </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                        <div class="pricing">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <td>
+                                        <span class="plan"><span>Ultimate</span></span>
+                                        <sup>$</sup>29<sub>/month</sub>
+                                        <hr>
+                                    </td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr><td>24/7 Support</td></tr>
+                                <tr><td>Unlimited Ads</td></tr>
+                                <tr><td>Ads Reviews</td></tr>
+                                <tr><td>Featured Ads</td></tr>
+                                <tr><td>Post Online Ads</td></tr>
+                                <tr><td>Check Statistics</td></tr>
+                                <tr><td>Video & Image Ads</td></tr>
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                    <td>
+                                        <a href="#" class="btn">Get started</a>
+                                    </td>
+                                </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+        <footer class="doc-footer style4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-7">
+                        <a href="#"><img src="assets/img/basic/logo.png" alt="adspotlogo"></a>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-5">
+                        <form action="/" class="widget-subscribe-2">
+                            <div class="labeled-input">
+                                <label>Enter your email address</label>
+                                <input title="title here" type="email">
+                            </div>
+                            <button class="btn btn-blue">subscribe</button>
+                        </form>
+                    </div>
+                </div>
+                <hr/>
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-4">
+                        <div class="text-widget">
+                            <p>Fusce aliquet quam eget neque ultrices lla posuere felis id arcu blandit sagittis ellen ender purus.</p>
+                            <div class="widget-social">
+                                <div class="social-links">
+                                    <ul>
+                                        <li><a href="#" class="fa fa-facebook"></a></li>
+                                        <li><a href="#" class="fa fa-twitter"></a></li>
+                                        <li><a href="#" class="fa fa-google-plus"></a></li>
+                                        <li><a href="#" class="fa fa-instagram"></a></li>
+                                        <li><a href="#" class="fa fa-dribbble"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-8">
+                        <div class="grid-list">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-6 col-md-3">
+                                    <ul>
+                                        <li><a href="#">About Us</a></li>
+                                        <li><a href="#">Contact Us</a></li>
+                                        <li><a href="#">Feedback</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-3">
+                                    <ul>
+                                        <li><a href="#">Community</a></li>
+                                        <li><a href="#">Trust &amp; Safety</a></li>
+                                        <li><a href="#">Help &amp; Support</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-3">
+                                    <ul>
+                                        <li><a href="#">Privacy Policy</a></li>
+                                        <li><a href="#">Terms of Service</a></li>
+                                        <li><a href="#">Cookie Policy</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-3">
+                                    <ul>
+                                        <li><a href="#">Community</a></li>
+                                        <li><a href="#">Trust &amp; Safety</a></li>
+                                        <li><a href="#">Help &amp; Support</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center copyRights">
+                    &copy; ADSPOT - Classified
+                </div>
+
+            </div>
+        </footer>
+    </div>
+
+    <!--======================================
+   Modals
+   =======================================-->
+   <div class="nav-right">
+       IF("{LOGGED_IN}&{WCHAT}"=="1&on"){
+       <ul class="sign-out">
+           <li><i class="fa fa-envelope"></i></li>
+           <li><a href="{LINK_MESSAGE}">{LANG_MESSAGE}</a></li>
+       </ul>
+       {:IF}
+       IF("{LOGGED_IN}"=="1"){
+       <!-- sign-in --><!-- user-dropdown -->
+       <div class="dropdown language-dropdown"><i class="fa fa-user"></i><a data-toggle="dropdown"
+                                                                            href="#"><span class="change-text">{USERNAME}</span>
+           <i class="fa fa-angle-down"></i></a>
+           <ul class="dropdown-menu language-change">
+               <li><a href="{LINK_DASHBOARD}">{LANG_DASHBOARD}</a></li>
+               <li><a href="{LINK_PROFILE}?username={USERNAME}">{LANG_PROFILE-PUBLIC}</a></li>
+               <li><a href="{LINK_POST-AD}">{LANG_POST-FREE-AD}</a></li>
+               <li><a href="{LINK_MYADS}">{LANG_MY-ADS-LISTINGS}</a></li>
+               <li><a href="{LINK_FAVADS}">{LANG_MY-FAVOURITE-ADS}</a></li>
+               <li><a href="{LINK_PENDINGADS}">{LANG_MY-PENDING-ADS}</a></li>
+               <li><a href="{LINK_LOGOUT}">{LANG_LOGOUT}</a></li>
+           </ul>
+       </div>
+       {:IF}
+       IF("{LOGGED_IN}"=="0"){
+       <ul class="sign-in">
+           <li><i class="fa fa-sign-in"></i></li>
+           <li><a class="modal-trigger" href="#loginPopUp">Login</a></li>
+           <li><a href="{LINK_SIGNUP}">{LANG_REGISTER}</a></li>
+       </ul>
+       {:IF}
+
+       <a href="{LINK_POST-AD}" class="btn">{LANG_POST-FREE-AD}</a>
+    <div id="signInModal" class="modal-container">
+        <a href="#" class="modal-overlay"> click to close modal</a>
+        <div class="inner">
+            <button class="close_modal"><i class="fa fa-remove"></i></button>
+            <div class="social_login_opt">
+                <div>
+                    <div class="opt-navigator dropdown-wrap">
+                        <button>open options</button>
+                        <div class="basic-dropdown">
+                            <ul class="social-drop-list">
+                                <li><a href="#"><i class="fa fa-twitter"></i>Twitter</a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i>Google+</a></li>
+                                <li><a href="#"><i class="fa fa-instagram"></i>Instagram</a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i>Linkedin</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="social-opts">
+                        <a href="#" class="opt-fb-login active">
+                            <i class="fa fa-facebook"></i>
+                            <span>Sign in with facebook</span>
+                        </a>
+                        <a href="#" class="opt-gp-login">
+                            <i class="fa fa-google-plus"></i>
+                            <span>Sign in with Google+</span>
+                        </a>
+                        <a href="#" class="opt-twitter-login">
+                            <i class="fa fa-twitter"></i>
+                            <span>Sign in with Twitter</span>
+                        </a>
+                        <a href="#" class="opt-instagram-login">
+                            <i class="fa fa-instagram"></i>
+                            <span>Sign in with Instagram</span>
+                        </a>
+                        <a href="#" class="opt-linkedin-login">
+                            <i class="fa fa-linkedin"></i>
+                            <span>Sign in with Linkedin</span>
+                        </a>
+                    </div>
+                </div>
+                <span class="split-opt">or</span>
+            </div>
+            <div class="modal-content">
+                <header>
+                    <h4>Welcome Back!</h4>
+                    <p>Please enter your details below</p>
+                </header>
+                <form action="/">
+                    <div class="field-block">
+                        <div class="labeled-input">
+                            <label>Username</label>
+                            <input title="title here" type="text">
+                        </div>
+                    </div>
+                    <div class="field-block">
+                        <div class="labeled-input">
+                            <label>Password</label>
+                            <input title="title here" type="password">
+                        </div>
+                    </div>
+                    <div class="row login-actions field-block">
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="custom-radio">
+                                <input type="radio" name="item-condition" id="login001">
+                                <label for="login001">Remember me</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 xs-text-left text-right">
+                            <a href="#">Forgot Password?</a>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-md btn-green block-element">Login Now</button>
+                    <div class="login-cta text-center">
+                        <p>Don't have an account?</p>
+                        <a href="#">Register here FREE</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="signUpModal" class="modal-container">
+        <a href="#" class="modal-overlay"> click to close modal</a>
+        <div class="inner">
+            <button class="close_modal"><i class="fa fa-remove"></i></button>
+            <div class="social_login_opt">
+                <div>
+                    <div class="opt-navigator dropdown-wrap">
+                        <button>open options</button>
+                        <div class="basic-dropdown">
+                            <ul class="social-drop-list">
+                                <li><a href="#"><i class="fa fa-twitter"></i>Twitter</a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i>Google+</a></li>
+                                <li><a href="#"><i class="fa fa-instagram"></i>Instagram</a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i>Linkedin</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="social-opts">
+                        <a href="#" class="opt-fb-login active">
+                            <i class="fa fa-facebook"></i>
+                            <span>Sign in with facebook</span>
+                        </a>
+                        <a href="#" class="opt-gp-login">
+                            <i class="fa fa-google-plus"></i>
+                            <span>Sign in with Google+</span>
+                        </a>
+                        <a href="#" class="opt-twitter-login">
+                            <i class="fa fa-twitter"></i>
+                            <span>Sign in with Twitter</span>
+                        </a>
+                        <a href="#" class="opt-instagram-login">
+                            <i class="fa fa-instagram"></i>
+                            <span>Sign in with Instagram</span>
+                        </a>
+                        <a href="#" class="opt-linkedin-login">
+                            <i class="fa fa-linkedin"></i>
+                            <span>Sign in with Linkedin</span>
+                        </a>
+                    </div>
+                </div>
+                <span class="split-opt">or</span>
+            </div>
+            <div class="modal-content">
+                <header>
+                    <h4>Welcome Back!</h4>
+                    <p>Please enter your details below</p>
+                </header>
+                <form action="/">
+                    <div class="field-block">
+                        <div class="labeled-input">
+                            <label>Username</label>
+                            <input title="title here" type="text">
+                        </div>
+                    </div>
+                    <div class="field-block">
+                        <div class="labeled-input">
+                            <label>Password</label>
+                            <input title="title here" type="password">
+                        </div>
+                    </div>
+                    <div class="field-block">
+                        <div class="icon-field">
+                            <span>+44</span>
+                            <input type="text" placeholder="Your Contact #">
+                        </div>
+                    </div>
+
+
+                    <button class="btn btn-md btn-green block-element">Signup Now</button>
+                    <div class="login-cta text-center"><br>
+                        By clicking Signup Now, you agree to <br>
+                        <a href="#">our Terms</a> and <a href="#">Privacy Policy</a>.
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!--========================================
+    Javascript
+    ===========================================-->
+    <script src="{SITE_URL}templates/{TPL_NAME}/assets/lib/jquery/dist/jquery.min.js"></script>
+    <script src="{SITE_URL}templates/{TPL_NAME}/assets/lib/slick-carousel/slick/slick.min.js"></script>
+    <script src="{SITE_URL}templates/{TPL_NAME}/assets/js/jquery-2.2.1.min.js"></script>
+    <script src="http://maps.google.com/maps/api/js?key={GMAP_KEY}&#038;libraries=places%2Cgeometry&#038;ver=2.2.1"></script>
+    <script src="{SITE_URL}templates/{TPL_NAME}/assets/js/map/richmarker-compiled.js"></script>
+    <script src="{SITE_URL}templates/{TPL_NAME}/assets/js/map/markerclusterer_packed.js"></script>
+    <script src="{SITE_URL}templates/{TPL_NAME}/assets/js/map/maps.js"></script>
+    <script src="{SITE_URL}templates/{TPL_NAME}/assets/js/map/jquery.style-switcher.js"></script>
+    <script src="{SITE_URL}templates/{TPL_NAME}/assets/js/app.js"></script>
+    <script>var ajaxurl = "{SITE_URL}user-ajax.php";</script>
+
+</body>
+</html>
